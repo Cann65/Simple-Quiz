@@ -1,0 +1,35 @@
+[
+  {
+    "question": "What is the purpose of garbage collection in Java?",
+    "answers": {
+      "a": "To free memory",
+      "b": "To allocate memory",
+      "c": "To clear variables",
+      "d": "To end the program"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "Garbage collection in Java helps in freeing up memory by removing unused objects."
+  },
+  {
+    "question": "Which of the following are programming languages?",
+    "answers": {
+      "a": "Python",
+      "b": "HTML",
+      "c": "CSS",
+      "d": "Java"
+    },
+    "correctAnswer": ["a", "d"],
+    "explanation": "Python and Java are programming languages; HTML and CSS are markup and styling languages."
+  },
+  {
+    "question": "Which are Java keywords?",
+    "answers": {
+      "a": "final",
+      "b": "String",
+      "c": "public",
+      "d": "loop"
+    },
+    "correctAnswer": ["a", "c"],
+    "explanation": "'final' and 'public' are Java keywords; 'String' is a class, and 'loop' is not a keyword."
+  }
+]

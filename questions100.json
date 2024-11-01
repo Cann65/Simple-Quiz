@@ -1,0 +1,794 @@
+[
+  {
+    "question": "What is the purpose of garbage collection in Java?",
+    "answers": {
+      "a": "To free memory",
+      "b": "To allocate memory",
+      "c": "To clear variables",
+      "d": "To end the program"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "Garbage collection in Java helps in freeing up memory by removing unused objects."
+  },
+  {
+    "question": "Which of the following are programming languages?",
+    "answers": {
+      "a": "Python",
+      "b": "HTML",
+      "c": "CSS",
+      "d": "Java"
+    },
+    "correctAnswer": ["a", "d"],
+    "explanation": "Python and Java are programming languages; HTML and CSS are markup and styling languages."
+  },
+  {
+    "question": "Which are Java keywords?",
+    "answers": {
+      "a": "final",
+      "b": "String",
+      "c": "public",
+      "d": "loop"
+    },
+    "correctAnswer": ["a", "c"],
+    "explanation": "'final' and 'public' are Java keywords; 'String' is a class, and 'loop' is not a keyword."
+  },
+  {
+    "question": "Which statement is correct about interfaces in Java?",
+    "answers": {
+      "a": "Interfaces can contain constructors.",
+      "b": "All methods in interfaces are implicitly public and abstract.",
+      "c": "A class can implement only one interface.",
+      "d": "Methods in interfaces can be private."
+    },
+    "correctAnswer": ["b"],
+    "explanation": "In Java, interfaces cannot contain constructors, and methods are implicitly public and abstract. A class can implement multiple interfaces, but interfaces cannot have private methods."
+  },
+  {
+    "question": "What is the result of the following code? int x = 3; int y = ++x * 5 / x-- + --x;",
+    "answers": {
+      "a": "y = 7",
+      "b": "y = 6",
+      "c": "y = 8",
+      "d": "y = 9"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "Due to the order of increments and decrements, the calculation follows a specific sequence: ++x makes x=4, then 4*5/4 + 2, resulting in y = 6."
+  },
+  {
+    "question": "Which of the following is a feature of the Java programming language?",
+    "answers": {
+      "a": "Platform-dependent",
+      "b": "Multiple inheritance",
+      "c": "Platform-independent",
+      "d": "Single-threaded"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "Java is platform-independent because it runs on the Java Virtual Machine (JVM), which allows it to operate across different operating systems without recompilation."
+  },
+  {
+    "question": "What will be the output of the following code?\n\nint a = 5; int b = a++ + ++a; System.out.println(b);",
+    "answers": {
+      "a": "11",
+      "b": "12",
+      "c": "10",
+      "d": "Compiler error"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The value of 'a' is incremented twice: first with post-increment (5), then with pre-increment, resulting in 12 for 'b'."
+  },
+  {
+    "question": "Which method is used to compare two strings in Java for equality?",
+    "answers": {
+      "a": "compare()",
+      "b": "==",
+      "c": "equals()",
+      "d": "compareTo()"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "In Java, the equals() method compares the contents of two strings for equality, unlike ==, which compares memory references."
+  },
+  {
+    "question": "What is the default value of a boolean variable in Java?",
+    "answers": {
+      "a": "true",
+      "b": "false",
+      "c": "0",
+      "d": "null"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "In Java, the default value of a boolean variable is false."
+  },
+  {
+    "question": "Which of the following statements is true about inheritance in Java?",
+    "answers": {
+      "a": "Java supports multiple inheritance through classes.",
+      "b": "Java supports multiple inheritance through interfaces.",
+      "c": "Java does not support inheritance.",
+      "d": "Java allows a class to inherit from multiple classes directly."
+    },
+    "correctAnswer": ["b"],
+    "explanation": "Java does not support multiple inheritance through classes, but it does through interfaces, allowing a class to implement multiple interfaces."
+  },
+  {
+    "question": "What is the size of an int variable in Java?",
+    "answers": {
+      "a": "8 bits",
+      "b": "16 bits",
+      "c": "32 bits",
+      "d": "64 bits"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "In Java, an int variable occupies 32 bits or 4 bytes of memory."
+  },
+  {
+    "question": "Which of the following options can be used to declare an array in Java?",
+    "answers": {
+      "a": "int arr[] = new int[5];",
+      "b": "int arr[] = new int[5]();",
+      "c": "int arr = new int(5);",
+      "d": "int arr(5);"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The correct way to declare an array in Java is 'int arr[] = new int[5];'. Other options contain syntax errors."
+  },
+  {
+    "question": "Which keyword is used to inherit a class in Java?",
+    "answers": {
+      "a": "implement",
+      "b": "extends",
+      "c": "inherits",
+      "d": "super"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "In Java, the 'extends' keyword is used to inherit a class, allowing the subclass to inherit properties and methods from the superclass."
+  },
+  {
+    "question": "What is the output of the following code?\n\nString str = \"Hello\";\nSystem.out.println(str.charAt(1));",
+    "answers": {
+      "a": "H",
+      "b": "e",
+      "c": "l",
+      "d": "o"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The charAt() method returns the character at the specified index, and index 1 in \"Hello\" is 'e'."
+  },
+  {
+    "question": "Which of these is not a valid access modifier in Java?",
+    "answers": {
+      "a": "public",
+      "b": "protected",
+      "c": "private",
+      "d": "internal"
+    },
+    "correctAnswer": ["d"],
+    "explanation": "'internal' is not a valid access modifier in Java. Java uses 'public', 'protected', and 'private' as access modifiers."
+  },
+  {
+    "question": "Which of these keywords is used to define an abstract class in Java?",
+    "answers": {
+      "a": "interface",
+      "b": "abstract",
+      "c": "virtual",
+      "d": "extends"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The 'abstract' keyword in Java is used to declare a class that cannot be instantiated and may contain abstract methods."
+  },
+  {
+    "question": "What will be the output of the following code?\n\nint x = 5;\nSystem.out.println(x++);\nSystem.out.println(++x);",
+    "answers": {
+      "a": "5 and 6",
+      "b": "5 and 7",
+      "c": "6 and 7",
+      "d": "Compiler error"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "x++ (post-increment) outputs 5, then x becomes 6. ++x (pre-increment) makes x 7 before outputting."
+  },
+  {
+    "question": "Which exception is thrown when dividing by zero in Java?",
+    "answers": {
+      "a": "NullPointerException",
+      "b": "ArithmeticException",
+      "c": "ArrayIndexOutOfBoundsException",
+      "d": "IllegalArgumentException"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "In Java, dividing by zero throws an ArithmeticException."
+  },
+  {
+    "question": "What is the default value of an object reference variable in Java if it is an instance variable?",
+    "answers": {
+      "a": "0",
+      "b": "null",
+      "c": "undefined",
+      "d": "An empty object"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "In Java, the default value of an object reference that is not initialized is 'null'."
+  },
+  {
+    "question": "Which operator is used by Java to concatenate strings?",
+    "answers": {
+      "a": "+",
+      "b": "&",
+      "c": "*",
+      "d": "%"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The '+' operator is used to concatenate strings in Java."
+  },
+  {
+    "question": "What is the output of the following code?\n\nString str = \"Java\";\nstr.concat(\" Programming\");\nSystem.out.println(str);",
+    "answers": {
+      "a": "Java Programming",
+      "b": "Java",
+      "c": "Programming",
+      "d": "Compiler error"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "Strings are immutable in Java. The concat() method does not change 'str'; it returns a new String that would need to be assigned."
+  },
+  {
+    "question": "Which of the following loops will always execute at least once?",
+    "answers": {
+      "a": "for loop",
+      "b": "while loop",
+      "c": "do-while loop",
+      "d": "enhanced for loop"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "The 'do-while' loop always executes at least once because the condition is checked after the loop body executes."
+  },
+  {
+    "question": "What is the size of a char variable in Java?",
+    "answers": {
+      "a": "8 bits",
+      "b": "16 bits",
+      "c": "32 bits",
+      "d": "64 bits"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "In Java, a char variable occupies 16 bits (2 bytes) because Java uses Unicode characters."
+  },
+  {
+    "question": "Which method in Java is used to find the length of a string?",
+    "answers": {
+      "a": "length()",
+      "b": "size()",
+      "c": "getSize()",
+      "d": "count()"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The 'length()' method in Java returns the number of characters in a string."
+  },
+  {
+    "question": "What is the superclass of all classes in Java?",
+    "answers": {
+      "a": "Object",
+      "b": "Main",
+      "c": "Class",
+      "d": "System"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "In Java, 'Object' is the superclass of all classes. Every class in Java implicitly inherits from Object."
+  },
+  {
+    "question": "Which keyword is used to prevent inheritance in Java?",
+    "answers": {
+      "a": "static",
+      "b": "final",
+      "c": "const",
+      "d": "super"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The 'final' keyword prevents inheritance by marking the class as final, meaning it cannot be extended by other classes."
+  },
+  {
+    "question": "What is the output of the following code?\n\nint x = 10;\nSystem.out.println(x > 5 ? x < 10 ? 1 : 0 : -1);",
+    "answers": {
+      "a": "1",
+      "b": "0",
+      "c": "-1",
+      "d": "Compiler error"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The code uses nested ternary operators. Since x=10, x>5 is true, so it checks x<10, which is false, resulting in 0."
+  },
+  {
+    "question": "Which of the following is a wrapper class in Java?",
+    "answers": {
+      "a": "Integer",
+      "b": "int",
+      "c": "double",
+      "d": "float"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "Wrapper classes in Java, like Integer, Double, and Float, wrap primitive types in an object."
+  },
+  {
+    "question": "What does the 'this' keyword represent in Java?",
+    "answers": {
+      "a": "The current object",
+      "b": "The superclass object",
+      "c": "A static method",
+      "d": "A new instance of a class"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "'this' refers to the current object and is used to access instance variables and methods."
+  },
+  {
+    "question": "Which method can be used to convert a string to uppercase in Java?",
+    "answers": {
+      "a": "toUpperCase()",
+      "b": "toUpper()",
+      "c": "uppercase()",
+      "d": "upper()"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The 'toUpperCase()' method converts all characters of a string to uppercase."
+  },
+  {
+    "question": "What is the default value of an int variable in Java?",
+    "answers": {
+      "a": "0",
+      "b": "null",
+      "c": "undefined",
+      "d": "1"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The default value of an int variable in Java is 0 if it's an instance variable."
+  },
+  {
+    "question": "Which statement is used to terminate a loop in Java?",
+    "answers": {
+      "a": "return",
+      "b": "break",
+      "c": "continue",
+      "d": "exit"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The 'break' statement terminates the loop and transfers control to the code after the loop."
+  },
+  {
+    "question": "What is the purpose of the 'static' keyword in Java?",
+    "answers": {
+      "a": "It makes a variable immutable.",
+      "b": "It allows a method or variable to belong to the class rather than any instance.",
+      "c": "It prevents inheritance.",
+      "d": "It is used to initialize an object."
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The 'static' keyword allows a field or method to belong to the class itself, not instances of the class."
+  },
+  {
+    "question": "Which of the following is a checked exception in Java?",
+    "answers": {
+      "a": "ArithmeticException",
+      "b": "ArrayIndexOutOfBoundsException",
+      "c": "FileNotFoundException",
+      "d": "NullPointerException"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "FileNotFoundException is a checked exception, meaning it must be either caught or declared in the method signature."
+  },
+  {
+    "question": "What is the correct way to declare a variable to store a floating-point number in Java?",
+    "answers": {
+      "a": "float num = 5.5;",
+      "b": "float num = 5.5f;",
+      "c": "float num = '5.5';",
+      "d": "float num = \"5.5\";"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "In Java, floating-point literals must have an 'f' or 'F' suffix for float types."
+  },
+  {
+    "question": "How many bits are used to represent the Unicode characters in Java?",
+    "answers": {
+      "a": "8 bits",
+      "b": "16 bits",
+      "c": "32 bits",
+      "d": "64 bits"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "Java uses 16-bit Unicode to represent characters, allowing a wide range of characters from various languages."
+  },
+  {
+    "question": "Which class in Java is used to handle file input and output?",
+    "answers": {
+      "a": "FileReader",
+      "b": "FileWriter",
+      "c": "File",
+      "d": "IOException"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "The File class in Java is used to create, delete, and manipulate file and directory paths, whereas FileReader and FileWriter are specifically for reading and writing files."
+  },
+  {
+    "question": "What is the main feature of encapsulation in Java?",
+    "answers": {
+      "a": "It increases visibility.",
+      "b": "It allows unrestricted access to data.",
+      "c": "It restricts access to certain components.",
+      "d": "It is used for inheritance."
+    },
+    "correctAnswer": ["c"],
+    "explanation": "Encapsulation in Java restricts access to components and protects data within a class by using access modifiers like private."
+  },
+  {
+    "question": "What will be the output of the following code?\n\nint a = 5, b = 10;\na = a + b;\nb = a - b;\na = a - b;\nSystem.out.println(a + \" \" + b);",
+    "answers": {
+      "a": "5 10",
+      "b": "10 5",
+      "c": "0 10",
+      "d": "10 0"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The code swaps the values of 'a' and 'b' without using a temporary variable, resulting in 10 for 'a' and 5 for 'b'."
+  },
+  {
+    "question": "Which of the following statements is true about a constructor in Java?",
+    "answers": {
+      "a": "A constructor must have a return type.",
+      "b": "A constructor is called when an object is created.",
+      "c": "A constructor cannot have parameters.",
+      "d": "A class can have only one constructor."
+    },
+    "correctAnswer": ["b"],
+    "explanation": "A constructor is a special method that initializes an object and is automatically called upon object creation."
+  },
+  {
+    "question": "Which data structure uses the LIFO (Last In, First Out) principle?",
+    "answers": {
+      "a": "Queue",
+      "b": "Stack",
+      "c": "Linked List",
+      "d": "Array"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "A stack operates on the LIFO principle, where the last element added is the first one to be removed."
+  },
+  {
+    "question": "Which operator is used to check if two variables are equal in Java?",
+    "answers": {
+      "a": "=",
+      "b": "==",
+      "c": "===",
+      "d": "equals()"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The '==' operator checks if two primitive variables have the same value, whereas equals() is used for object content comparison."
+  },
+  {
+    "question": "Which of the following statements is correct about the main() method in Java?",
+    "answers": {
+      "a": "It is called automatically when a program starts.",
+      "b": "It must return an int value.",
+      "c": "It can only be private.",
+      "d": "It is not required in all Java programs."
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The main() method is the entry point for Java applications and is automatically called when the program starts."
+  },
+  {
+    "question": "What will the following code output?\n\nSystem.out.println(\"Hello \" + 5 + 3);",
+    "answers": {
+      "a": "Hello 8",
+      "b": "Hello 53",
+      "c": "Hello 5 3",
+      "d": "Compiler error"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "Java concatenates 'Hello ' + 5 first, treating it as a string. Then it concatenates + 3, resulting in 'Hello 53'."
+  },
+  {
+    "question": "Which of these is used to handle exceptions in Java?",
+    "answers": {
+      "a": "throw",
+      "b": "catch",
+      "c": "try-catch",
+      "d": "error"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "The try-catch block is used to handle exceptions, catching errors that may occur in code execution."
+  },
+  {
+    "question": "Which of the following statements is true about the finalize() method in Java?",
+    "answers": {
+      "a": "It is a private method.",
+      "b": "It is used for garbage collection.",
+      "c": "It must be called explicitly.",
+      "d": "It is only available in interfaces."
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The finalize() method is called by the garbage collector before an object is removed from memory, allowing clean-up operations."
+  },
+  {
+    "question": "What is the output of the following code?\n\nString str = \"java\";\nSystem.out.println(str.toUpperCase());",
+    "answers": {
+      "a": "java",
+      "b": "JAVA",
+      "c": "Java",
+      "d": "Compiler error"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The toUpperCase() method converts all characters in the string to uppercase, resulting in 'JAVA'."
+  },
+  {
+    "question": "Which of these is not a primitive data type in Java?",
+    "answers": {
+      "a": "boolean",
+      "b": "int",
+      "c": "String",
+      "d": "char"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "In Java, 'String' is not a primitive data type; it is a class, while boolean, int, and char are primitive types."
+  },
+  {
+    "question": "What is the purpose of the 'super' keyword in Java?",
+    "answers": {
+      "a": "To call a superclass constructor",
+      "b": "To define a superclass",
+      "c": "To refer to the current object",
+      "d": "To prevent inheritance"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "'super' is used to refer to a superclass instance or call its constructor in a subclass."
+  },
+  {
+    "question": "What does the instanceof keyword do in Java?",
+    "answers": {
+      "a": "Compares two strings",
+      "b": "Checks if an object is an instance of a specified class",
+      "c": "Checks for null",
+      "d": "Casts an object to another type"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The instanceof keyword checks if an object is an instance of a specific class or subclass."
+  },
+  {
+    "question": "Which exception is thrown if an array is accessed with an illegal index in Java?",
+    "answers": {
+      "a": "NullPointerException",
+      "b": "ArrayIndexOutOfBoundsException",
+      "c": "ArithmeticException",
+      "d": "ClassCastException"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "Accessing an array with an invalid index in Java throws an ArrayIndexOutOfBoundsException."
+  },
+  {
+    "question": "What is the result of the following code?\n\nint a = 1; a += 5 + ++a;\nSystem.out.println(a);",
+    "answers": {
+      "a": "7",
+      "b": "8",
+      "c": "9",
+      "d": "10"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "The expression evaluates as a = a + (5 + 2), resulting in a = 9."
+  },
+  {
+    "question": "What does the Java 'javac' command do?",
+    "answers": {
+      "a": "Runs Java applications",
+      "b": "Compiles Java source files",
+      "c": "Installs Java packages",
+      "d": "Creates Java interfaces"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The 'javac' command is used to compile Java source files into bytecode."
+  },
+  {
+    "question": "Which of these is a method of the Object class in Java?",
+    "answers": {
+      "a": "toString()",
+      "b": "append()",
+      "c": "substring()",
+      "d": "print()"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "toString() is a method of the Object class, while the other methods belong to different classes."
+  },
+  {
+    "question": "What does the keyword 'void' signify in a method declaration?",
+    "answers": {
+      "a": "The method returns an integer.",
+      "b": "The method returns nothing.",
+      "c": "The method is a constructor.",
+      "d": "The method can return any type."
+    },
+    "correctAnswer": ["b"],
+    "explanation": "'void' indicates that the method does not return any value."
+  },
+  {
+    "question": "Which keyword is used to define a constant variable in Java?",
+    "answers": {
+      "a": "const",
+      "b": "final",
+      "c": "static",
+      "d": "constant"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The 'final' keyword in Java is used to declare a variable as constant, meaning it cannot be modified after initialization."
+  },
+  {
+    "question": "What is the result of the following code?\n\nSystem.out.println(10 + 20 + \"30\" + 40);",
+    "answers": {
+      "a": "30 3040",
+      "b": "10203040",
+      "c": "303040",
+      "d": "Compiler error"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "Java evaluates 10 + 20 first, resulting in 30. It then concatenates '30' and 40, resulting in '303040'."
+  },
+  {
+    "question": "Which of the following keywords is used for exception handling in Java?",
+    "answers": {
+      "a": "throw",
+      "b": "catch",
+      "c": "try",
+      "d": "All of the above"
+    },
+    "correctAnswer": ["d"],
+    "explanation": "Java uses try, catch, and throw for exception handling, each serving a specific purpose."
+  },
+  {
+    "question": "Which package contains the Scanner class in Java?",
+    "answers": {
+      "a": "java.lang",
+      "b": "java.util",
+      "c": "java.io",
+      "d": "java.text"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The Scanner class is part of the java.util package, used for reading input from various sources."
+  },
+  {
+    "question": "What does the break statement do in Java?",
+    "answers": {
+      "a": "Exits a method",
+      "b": "Terminates a loop or switch statement",
+      "c": "Skips the current iteration of a loop",
+      "d": "Ends the program"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The 'break' statement in Java terminates the nearest loop or switch statement."
+  },
+  {
+    "question": "What will be the output of the following code?\n\nint x = 3;\nx *= x + 5;\nSystem.out.println(x);",
+    "answers": {
+      "a": "24",
+      "b": "15",
+      "c": "27",
+      "d": "18"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The expression x *= x + 5 is equivalent to x = x * (x + 5), which is 3 * (3 + 5) = 3 * 8 = 24."
+  },
+  {
+    "question": "Which of the following correctly creates an instance of an array in Java?",
+    "answers": {
+      "a": "int arr[] = new int[5];",
+      "b": "int arr[] = int[5];",
+      "c": "int arr = new int[5];",
+      "d": "int arr() = new int[5];"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "In Java, arrays are created with the 'new' keyword, specifying the data type and size in square brackets, as in 'int arr[] = new int[5];'."
+  },
+  {
+    "question": "Which of these is used to find and fix bugs in Java programs?",
+    "answers": {
+      "a": "JVM",
+      "b": "JRE",
+      "c": "JDK",
+      "d": "JDB"
+    },
+    "correctAnswer": ["d"],
+    "explanation": "JDB (Java Debugger) is a tool used for finding and fixing bugs in Java applications."
+  },
+  {
+    "question": "Which of the following statements correctly declares a variable in Java?",
+    "answers": {
+      "a": "int num = 10;",
+      "b": "integer num = 10;",
+      "c": "int num = '10';",
+      "d": "num int = 10;"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "'int num = 10;' is the correct syntax to declare an integer variable in Java."
+  },
+  {
+    "question": "What is the output of the following code?\n\nint a = 10;\na = a++ + ++a;\nSystem.out.println(a);",
+    "answers": {
+      "a": "22",
+      "b": "21",
+      "c": "20",
+      "d": "11"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The expression 'a = a++ + ++a' results in a complex evaluation where 'a' ends up as 21 due to the order of increment operations."
+  },
+  {
+    "question": "What is the return type of the hashCode() method in Java?",
+    "answers": {
+      "a": "void",
+      "b": "int",
+      "c": "Object",
+      "d": "long"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The hashCode() method in Java returns an integer (int) that represents the memory address of an object, though not directly."
+  },
+  {
+    "question": "What will be the output of the following code?\n\nString s = \"abc\";\ns.concat(\"def\");\nSystem.out.println(s);",
+    "answers": {
+      "a": "abcdef",
+      "b": "abc",
+      "c": "def",
+      "d": "Compile error"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "Strings are immutable in Java. The concat() method returns a new string but does not modify 's', so 's' remains 'abc'."
+  },
+  {
+    "question": "Which of the following is used to create an object in Java?",
+    "answers": {
+      "a": "class",
+      "b": "constructor",
+      "c": "new",
+      "d": "create"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "In Java, the 'new' keyword is used to create an instance of a class (an object)."
+  },
+  {
+    "question": "Which of the following will directly stop the execution of a program?",
+    "answers": {
+      "a": "return",
+      "b": "break",
+      "c": "System.exit(0);",
+      "d": "continue"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "System.exit(0); will terminate the program immediately, closing the JVM."
+  },
+  {
+    "question": "Which of these cannot be used for a switch statement parameter in Java?",
+    "answers": {
+      "a": "int",
+      "b": "String",
+      "c": "boolean",
+      "d": "char"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "A switch statement in Java does not accept a boolean as a parameter; it accepts int, char, byte, short, and String types."
+  },
+  {
+    "question": "Which of these methods is used to find the square root of a number in Java?",
+    "answers": {
+      "a": "Math.sqrt()",
+      "b": "Math.square()",
+      "c": "Math.pow()",
+      "d": "Math.root()"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The Math.sqrt() method is used to find the square root of a number in Java."
+  },
+  {
+    "question": "Which of these access specifiers can be used for an interface?",
+    "answers": {
+      "a": "private",
+      "b": "protected",
+      "c": "public",
+      "d": "All of the above"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "Interfaces are typically declared as 'public' to be accessible by any class."
+  }
+]
