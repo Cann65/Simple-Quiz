@@ -791,4 +791,5 @@
     "correctAnswer": ["c"],
     "explanation": "Interfaces are typically declared as 'public' to be accessible by any class."
   }
+  
 ]
