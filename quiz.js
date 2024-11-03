@@ -14,7 +14,7 @@ let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let correctCount = 0;
-let timeLeft = 50 * 60; // 200 Minuten in Sekunden
+let timeLeft = 50 * 60; // 50 Minuten in Sekunden
 let selectedAnswers = new Set();
 let questionAnsweredIncorrectly = false;
 let numberOfQuestions = 50;
@@ -68,7 +68,7 @@ function showQuestion(questionObj) {
 
   Object.keys(questionObj.answers).forEach((key) => {
     const button = document.createElement("button");
-    button.innerText = `${key}: ${questionObj.answers[key]}`;
+    button.innerText = `${key.toUpperCase()}: ${questionObj.answers[key]}`;
     button.classList.add("answer-btn");
     button.addEventListener("click", () =>
       handleAnswerSelection(button, key, questionObj)
@@ -80,10 +80,16 @@ function showQuestion(questionObj) {
 }
 
 function handleAnswerSelection(button, selectedAnswer, questionObj) {
-  const isCorrect = questionObj.correctAnswer.includes(selectedAnswer);
+  // Normalisiere die Groß- und Kleinschreibung, um Vergleiche unabhängig davon zu machen
+  const normalizedSelectedAnswer = selectedAnswer.toLowerCase();
+  const normalizedCorrectAnswers = questionObj.correctAnswer.map((answer) =>
+    answer.toLowerCase()
+  );
+
+  const isCorrect = normalizedCorrectAnswers.includes(normalizedSelectedAnswer);
 
   if (isCorrect) {
-    selectedAnswers.add(selectedAnswer);
+    selectedAnswers.add(normalizedSelectedAnswer);
     button.classList.add("correct");
 
     // Richtig-Audio abspielen
@@ -91,9 +97,9 @@ function handleAnswerSelection(button, selectedAnswer, questionObj) {
 
     // Prüfen, ob alle richtigen Antworten ausgewählt wurden
     if (
-      selectedAnswers.size === questionObj.correctAnswer.length &&
+      selectedAnswers.size === normalizedCorrectAnswers.length &&
       [...selectedAnswers].every((answer) =>
-        questionObj.correctAnswer.includes(answer)
+        normalizedCorrectAnswers.includes(answer)
       )
     ) {
       // Nur Punkt geben, wenn keine falsche Antwort vorher gewählt wurde

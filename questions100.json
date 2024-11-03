@@ -942,14 +942,14 @@
   {
     "question": "Given the following array:\n\nint [] intArr = {8, 16, 32, 64, 128};\n\nWhich two code fragments, independently, print each element in this array?",
     "options": {
-      "A": "for(int i : intArr) { System.out.print(intArr[i] + ' '); }",
-      "B": "for(int i : intArr) { System.out.print(i + ' '); }",
-      "C": "for(int i=0 : intArr) { System.out.print(intArr[i] + ' '); i++; }",
-      "D": "for(int i=0; i < intArr.length; i++) { System.out.print(i + ' '); }",
-      "E": "for(int i=0 ; i < intArr.length; i++) { System.out.print(intArr[i] + ' '); }",
-      "F": "for(int i: i < intArr.length; i++) { System.out.print(intArr[i] + ' '); }"
+      "a": "for(int i : intArr) { System.out.print(intArr[i] + ' '); }",
+      "b": "for(int i : intArr) { System.out.print(i + ' '); }",
+      "c": "for(int i=0 : intArr) { System.out.print(intArr[i] + ' '); i++; }",
+      "d": "for(int i=0; i < intArr.length; i++) { System.out.print(i + ' '); }",
+      "e": "for(int i=0 ; i < intArr.length; i++) { System.out.print(intArr[i] + ' '); }",
+      "f": "for(int i: i < intArr.length; i++) { System.out.print(intArr[i] + ' '); }"
     },
-    "correctAnswer": ["B", "E"],
+    "correctAnswer": ["b", "e"],
     "explanation": "Option B uses the enhanced for loop, which iterates through each element directly, and Option E uses the standard for loop to access each element by index."
   },
   {
@@ -967,23 +967,23 @@
   {
     "question": "Given:\n\npublic class TestScope { public static void main(String[] args) { int var1 = 200; System.out.print(doCalc(var1)); System.out.print(' ' + var1); } static int doCalc(int var1) { var1 = var1 * 2; return var1; } }\n\nWhat is the result?",
     "options": {
-      "A": "400 200",
-      "B": "200 200",
-      "C": "400 400",
-      "D": "Compilation fails."
+      "a": "400 200",
+      "b": "200 200",
+      "c": "400 400",
+      "d": "Compilation fails."
     },
-    "correctAnswer": ["A"],
+    "correctAnswer": ["a"],
     "explanation": "The method doCalc modifies its local copy of var1 but does not affect the original var1 in main. Therefore, it prints '400' from doCalc and '200' from main."
   },
   {
     "question": "Given:\n\npublic class MarkList { int num; public static void graceMarks(MarkList obj4) { obj4.num += 10; } public static void main(String[] args) { MarkList obj1 = new MarkList(); MarkList obj2 = obj1; MarkList obj3 = null; obj2.num = 60; graceMarks(obj2); } }\n\nHow many MarkList instances are created in memory at runtime?",
     "options": {
-      "A": "1",
-      "B": "2",
-      "C": "3",
-      "D": "4"
+      "a": "1",
+      "b": "2",
+      "c": "3",
+      "d": "4"
     },
-    "correctAnswer": ["A"],
+    "correctAnswer": ["a"],
     "explanation": "Only one instance of MarkList is created and assigned to obj1. obj2 refers to the same instance, and obj3 is null."
   },
 
@@ -1436,92 +1436,92 @@
   {
     "question": "Given the following main method: public static void main(String [] args) { int num = 5; do { System.out.print(num +\" \"); } while(num == 0); } What is the result?",
     "answers": {
-      "A": "5 4 3 2 1 0",
-      "B": "5 4 3 2 1",
-      "C": "4 2 1",
-      "D": "5",
-      "E": "Nothing is printed"
+      "a": "5 4 3 2 1 0",
+      "b": "5 4 3 2 1",
+      "c": "4 2 1",
+      "d": "5",
+      "e": "Nothing is printed"
     },
-    "correctAnswer": ["D"],
+    "correctAnswer": ["d"],
     "explanation": "The 'do-while' loop runs at least once, printing '5', because 'num == 0' is checked after the first iteration."
   },
   {
     "question": "Given the code fragment: int x = 100; int a = x++ ; int b = ++x; int c = x++ ; int d =(a < b) ?(a < c) ? a:(b <c ) ? b: c; System.out.println(d) ; What is the result?",
     "answers": {
-      "A": "100",
-      "B": "101",
-      "C": "102",
-      "D": "103",
-      "E": "Compilation fails"
+      "a": "100",
+      "b": "101",
+      "c": "102",
+      "d": "103",
+      "e": "Compilation fails"
     },
-    "correctAnswer": ["E"],
+    "correctAnswer": ["e"],
     "explanation": "The code has a syntax error with nested ternary operators, causing compilation to fail."
   },
   {
     "question": "Given: public class Test { public static void main(String[] args) { String[][] chs = new String[2][]; chs[0] = new String[2]; chs[1] = new String[5]; int i = 97; for(int a = 0; a < chs.length; a++) { for(int b = 0; b < chs.length; b++) { chs [a] [b] = \" \" + i; i++; } } for(String[] ca : chs) { for(String c : ca) { System.out.print(c + \" \"); } System.out.println(); } } } What is the result?",
     "answers": {
-      "A": "97 98 99 100 null null null",
-      "B": "91 98 99 100 101 102 103",
-      "C": "Compilation fails.",
-      "D": "A NullPointerException is thrown at runtime.",
-      "E": "An ArrayIndexOutOfBoundsException is thrown at runtime."
+      "a": "97 98 99 100 null null null",
+      "b": "91 98 99 100 101 102 103",
+      "c": "Compilation fails.",
+      "d": "A NullPointerException is thrown at runtime.",
+      "e": "An ArrayIndexOutOfBoundsException is thrown at runtime."
     },
-    "correctAnswer": ["A"],
+    "correctAnswer": ["a"],
     "explanation": "The nested arrays are partially filled, so 'null' values appear after filling the valid indices with '97', '98', '99', and '100'."
   },
   {
     "question": "Given: public class Student { public String name = \"\"; public int age = 0; public String major = \"Undeclared\"; public boolean fulltime = true; public void display() { System.out.println(\"Name: \" + name + \" Major: \" + major); } public boolean isFullTime() { return fulltime; } } Which line of code initializes a student instance?",
     "answers": {
-      "A": "Student student1;",
-      "B": "Student student1 = Student.new();",
-      "C": "Student student1 = new Student();",
-      "D": "Student student1 = Student();"
+      "a": "Student student1;",
+      "b": "Student student1 = Student.new();",
+      "c": "Student student1 = new Student();",
+      "d": "Student student1 = Student();"
     },
-    "correctAnswer": ["C"],
+    "correctAnswer": ["c"],
     "explanation": "'Student student1 = new Student();' correctly creates an instance of the Student class."
   },
   {
     "question": "What should keyword1 and keyword2 be respectively, in order to produce output 2345? int [] array = {1,2,3,4,5}; for(int i: array) { if( i < 2) { keyword1 ; } System.out.print(i); if( i == 3) { keyword2 ; } }",
     "answers": {
-      "A": "continue, break",
-      "B": "break, break",
-      "C": "break, continue",
-      "D": "continue, continue"
+      "a": "continue, break",
+      "b": "break, break",
+      "c": "break, continue",
+      "d": "continue, continue"
     },
-    "correctAnswer": ["D"],
+    "correctAnswer": ["d"],
     "explanation": "Using 'continue' for both skips the values that don't match the conditions, achieving the output '2345'."
   },
   {
     "question": "What is the result? int i, j=0; i =(3* 2 +4 +5 ) ; j =(3 *((2+4) + 5)); System.out.println(\"i:\"+ i + \"\\nj:\"+j);",
     "answers": {
-      "A": "i: 16 j: 33",
-      "B": "i: 15 j:33",
-      "C": "i:33 j:23",
-      "D": "i:15 j:23"
+      "a": "i: 16 j: 33",
+      "b": "i: 15 j:33",
+      "c": "i:33 j:23",
+      "d": "i:15 j:23"
     },
-    "correctAnswer": ["B"],
+    "correctAnswer": ["b"],
     "explanation": "The expression calculates 'i' as '15' and 'j' as '33' based on operator precedence."
   },
   {
     "question": "Your friend keeps telling you 'Don't redeem the card!' in a message. How can you check in Java if the message really contains the word 'redeem'?",
     "answers": {
-      "A": "message.contains(\"redeem\");",
-      "B": "message.indexOf(\"redeem\") >= 0;",
-      "C": "message.equals(\"redeem\");",
-      "D": "message.charAt(0) == 'r';"
+      "a": "message.contains(\"redeem\");",
+      "b": "message.indexOf(\"redeem\") >= 0;",
+      "c": "message.equals(\"redeem\");",
+      "d": "message.charAt(0) == 'r';"
     },
-    "correctAnswer": ["A", "B"],
+    "correctAnswer": ["a", "b"],
     "explanation": "Both 'contains' and 'indexOf' can be used to check if 'redeem' is part of the message."
   },
   {
     "question": "You want to check if the message 'Matthias soll zurück zu unserer Klasse' ends with 'Klasse'. Which line of Java code will confirm this?",
     "answers": {
-      "A": "message.endsWith(\"Klasse\");",
-      "B": "message.equals(\"Klasse\");",
-      "C": "message.contains(\"Klasse\");",
-      "D": "message.charAt(message.length() - 1) == 'e';"
+      "a": "message.endsWith(\"Klasse\");",
+      "b": "message.equals(\"Klasse\");",
+      "c": "message.contains(\"Klasse\");",
+      "d": "message.charAt(message.length() - 1) == 'e';"
     },
-    "correctAnswer": ["A"],
+    "correctAnswer": ["a"],
     "explanation": "The 'endsWith' method checks if the string ends with 'Klasse'."
   },
   {
@@ -1533,6 +1533,6 @@
       "d": "1"
     },
     "correctAnswer": ["a"],
-    "explanation": "A 'true' value would indicate that Matthias has returned to the class."
+    "explanation": "a 'true' value would indicate that Matthias has returned to the class."
   }
 ]
