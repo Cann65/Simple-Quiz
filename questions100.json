@@ -790,6 +790,665 @@
     },
     "correctAnswer": ["c"],
     "explanation": "Interfaces are typically declared as 'public' to be accessible by any class."
+  },
+  {
+    "question": "Which are Java keywords?",
+    "answers": {
+      "a": "final",
+      "b": "String",
+      "c": "public",
+      "d": "loop"
+    },
+    "correctAnswer": ["a", "c"],
+    "explanation": "'final' and 'public' are Java keywords; 'String' is a class, and 'loop' is not a keyword."
+  },
+  {
+    "question": "Which statement is correct about interfaces in Java?",
+    "answers": {
+      "a": "Interfaces can contain constructors.",
+      "b": "All methods in interfaces are implicitly public and abstract.",
+      "c": "A class can implement only one interface.",
+      "d": "Methods in interfaces can be private."
+    },
+    "correctAnswer": ["b"],
+    "explanation": "In Java, interfaces cannot contain constructors, and methods are implicitly public and abstract. A class can implement multiple interfaces, but interfaces cannot have private methods."
+  },
+  {
+    "question": "What is the result of the following code? int x = 3; int y = ++x * 5 / x-- + --x;",
+    "answers": {
+      "a": "y = 7",
+      "b": "y = 6",
+      "c": "y = 8",
+      "d": "y = 9"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "Due to the order of increments and decrements, the calculation follows a specific sequence: ++x makes x=4, then 4*5/4 + 2, resulting in y = 6."
+  },
+  {
+    "question": "Given the code fragment: \n\npublic class Student { \n public String name = \"\"; \n public int age = 0; \n public String major = \"Undeclared\"; \n public boolean fulltime = true; \n public void display() { \n  System.out.println(\"Name: \" + name + \" Major: \" + major); \n } \n public boolean isFullTime() { \n  return fulltime; \n }\n}\n\nWhich line of code initializes a student instance?",
+    "answers": {
+      "a": "Student student1;",
+      "b": "Student student1 = Student.new();",
+      "c": "Student student1 = new Student();",
+      "d": "Student student1 = Student();"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "In Java, the correct way to instantiate a new object is with 'new ClassName()'."
+  },
+  {
+    "question": "What should keyword1 and keyword2 be respectively, in order to produce output 2345?\n\nint [] array = {1,2,3,4,5};\nfor(int i: array) { \n if( i < 2) { \n  keyword1 ; \n }\n System.out.print(i);\n if( i == 3) { \n  keyword2 ; \n }\n}",
+    "answers": {
+      "a": "continue, break",
+      "b": "break, break",
+      "c": "break, continue",
+      "d": "continue, continue"
+    },
+    "correctAnswer": ["d"],
+    "explanation": "The 'continue' skips the current iteration, and the second 'continue' allows printing '2345'."
+  },
+  {
+    "question": "What is the result?\n\nGiven the code fragment:\n\npublic static void main(String[] args) {\n List <String> names = new ArrayList<>();\n names.add(\"Robb\");\n names.add(\"Bran\");\n names.add(\"Rick\");\n names.add(\"Bran\");\n if(names.remove(\"Bran\")) {\n names.remove(\"Jon\");\n }\n System.out.println(names);\n}\n\n",
+    "answers": {
+      "a": "[Robb, Rick, Bran]",
+      "b": "[Robb, Rick]",
+      "c": "[Robb, Bran, Rick, Bran]",
+      "d": "An exception is thrown at runtime."
+    },
+    "correctAnswer": ["a"],
+    "explanation": "After removing the first occurrence of 'Bran', the list is [Robb, Rick, Bran]."
+  },
+  {
+    "question": "Which code fragment, when inserted at line 3, enables the code to print 10:20?\n\nGiven:\n\npublic class Test {\n public static void main(String[] args) {\n /* insert code here */\n array[0]=10;\n array[1]=20;\n System.out.print(array[0] +\" : \"+array[1]);\n }\n}\n",
+    "answers": {
+      "a": "int[] array = new int[1];",
+      "b": "int[] array;\narray = new int[2];",
+      "c": "int array = new int[2];",
+      "d": "int array [2];"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "Option B initializes 'array' with two elements, allowing the values to be stored."
+  },
+  {
+    "question": "Which of the following exception will be thrown due to the statement given here?\n\nint array[] = new int[-2];\n",
+    "answers": {
+      "a": "NullPointerException",
+      "b": "NegativeArraySizeException",
+      "c": "ArrayIndexOutOfBoundsException",
+      "d": "IndexOutOfBoundsException",
+      "e": "This statement does not cause any exception."
+    },
+    "correctAnswer": ["b"],
+    "explanation": "Creating an array with a negative size throws NegativeArraySizeException."
+  },
+  {
+    "question": "Which code fragments, inserted independently, enable the code to compile? (Choose 3)\n\nGiven:\n\nclass Test2 {\n int fvar;\n static int cvar;\n public static void main(String [] args ) {\n Test2 = new Test2();\n // insert code here to write field variables\n }\n}\n",
+    "answers": {
+      "a": "t.fvar = 200;",
+      "b": "cvar = 400;",
+      "c": "fvar = 200;\ncvar = 400;",
+      "d": "this.fvar = 200;\nthis.cvar = 400;",
+      "e": "t.fvar = 200;\nTest2.cvar = 400;",
+      "f": "this.fvar = 200;\nTest2.cvar = 400;"
+    },
+    "correctAnswer": ["a", "b", "e"],
+    "explanation": "Options A, B, and E use valid syntax for accessing static and instance variables."
+  },
+  {
+    "question": "Given the code fragment:\n\nfor(int ii = 0; ii < 3;ii++) {\n int count = 0;\n for(int jj = 3; jj > 0; jj) {\n if(ii == jj) {\n ++count;\n break;\n }\n }\n System.out.print(count);\n continue;\n}\n",
+    "answers": {
+      "a": "011",
+      "b": "012",
+      "c": "123",
+      "d": "000"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The nested loop increments 'count' when ii == jj, producing the output '011'."
+  },
+  {
+    "question": "Given the code fragment:\n\npublic static void main(String[] args) {\n int a[] = {1, 2, 3, 4, 5};\n for(XXX) {\n System.out.print(a[e]);\n }\n}\n\nWhich option can replace XXX to enable the code to print 135?",
+    "answers": {
+      "a": "int e = 0; e <= 4; e++",
+      "b": "int e = 0; e < 5; e += 2",
+      "c": "int e = 1; e <= 5; e += 1",
+      "d": "int e = 1; e < 5; e += 2"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "This loop prints the array elements with index 0, 2, and 4, which are 1, 3, and 5."
+  },
+  {
+    "question": "Given the code fragment:\n\npublic static void main(String[] args) {\n ArrayList myList = new ArrayList();\n String[] myArray;\n try {\n while(true) {\n myList.add(\"My String\");\n }\n } catch(RuntimeException re) {\n System.out.println(\"Caught a RuntimeException\");\n } catch(Exception e) {\n System.out.println(\"Caught an Exception\");\n }\n System.out.println(\"Ready to use\");\n}\n\nWhat is the result?",
+    "answers": {
+      "a": "Execution terminates in the first catch statement, and 'Caught a RuntimeException' is printed to the console.",
+      "b": "Execution terminates in the second catch statement, and 'Caught an Exception' is printed to the console.",
+      "c": "A runtime error is thrown in the thread 'main'.",
+      "d": "Execution completes normally, and 'Ready to use' is printed to the console.",
+      "e": "The code fails to compile because a throws keyword is required."
+    },
+    "correctAnswer": ["c"],
+    "explanation": "The while loop is an infinite loop, leading to an OutOfMemoryError, which cannot be caught by Exception or RuntimeException."
+  },
+  {
+    "question": "Given the code fragment:\n\npublic static void main(String[] args) {\n int ii = 0;\n int jj = 7;\n for(ii = 0; ii < jj - 1; ii = ii + 2) {\n System.out.print(ii + \" \");\n }\n}\n\nWhat is the result?",
+    "answers": {
+      "a": "2 4",
+      "b": "0 2 4 6",
+      "c": "0 2 4",
+      "d": "Compilation fails"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "The loop increments by 2 each time, stopping before jj-1, resulting in 0 2 4."
+  },
+  {
+    "question": "Given the following array:\n\nint [] intArr = {8, 16, 32, 64, 128};\n\nWhich two code fragments, independently, print each element in this array?",
+    "options": {
+      "A": "for(int i : intArr) { System.out.print(intArr[i] + ' '); }",
+      "B": "for(int i : intArr) { System.out.print(i + ' '); }",
+      "C": "for(int i=0 : intArr) { System.out.print(intArr[i] + ' '); i++; }",
+      "D": "for(int i=0; i < intArr.length; i++) { System.out.print(i + ' '); }",
+      "E": "for(int i=0 ; i < intArr.length; i++) { System.out.print(intArr[i] + ' '); }",
+      "F": "for(int i: i < intArr.length; i++) { System.out.print(intArr[i] + ' '); }"
+    },
+    "answer": ["B", "E"]
+  },
+  {
+    "question": "Given the code fragment:\n\nint[] array = {1, 2, 3, 4, 5};\n\nAnd given the requirements:\n1. Process all the elements of the array in the order of entry.\n2. Process all the elements of the array in the reverse order of entry.\n3. Process alternating elements of the array in the order of entry.\n\nWhich two statements are true?",
+    "options": {
+      "A": "Requirements 1, 2, and 3 can be implemented by using the enhanced for loop.",
+      "B": "Requirements 1, 2, and 3 can be implemented by using the standard for loop.",
+      "C": "Requirements 2 and 3 CANNOT be implemented by using the standard for loop.",
+      "D": "Requirement 1 can be implemented by using the enhanced for loop.",
+      "E": "Requirement 3 CANNOT be implemented by using either the enhanced for loop or the standard for loop."
+    },
+    "answer": ["B", "D"]
+  },
+  {
+    "question": "Given:\n\npublic class TestScope { public static void main(String[] args) { int var1 = 200; System.out.print(doCalc(var1)); System.out.print(' ' + var1); } static int doCalc(int var1) { var1 = var1 * 2; return var1; } }\n\nWhat is the result?",
+    "options": {
+      "A": "400 200",
+      "B": "200 200",
+      "C": "400 400",
+      "D": "Compilation fails."
+    },
+    "answer": ["A"]
+  },
+  {
+    "question": "Given:\n\npublic class MarkList { int num; public static void graceMarks(MarkList obj4) { obj4.num += 10; } public static void main(String[] args) { MarkList obj1 = new MarkList(); MarkList obj2 = obj1; MarkList obj3 = null; obj2.num = 60; graceMarks(obj2); } }\n\nHow many MarkList instances are created in memory at runtime?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "answer": ["A"]
+  },
+  {
+    "question": "Which two statements are true about the hashCode method?",
+    "options": [
+      "A. The hashCode method can take multiple arguments.",
+      "B. The hashCode method is used to improve the performance of hash tables.",
+      "C. The hashCode method must always return a unique integer for each object.",
+      "D. If two objects are equal according to the equals(Object) method, then calling the hashCode method on each of the two objects must produce the same integer result.",
+      "E. The hashCode method is defined in the java.lang.Object class."
+    ],
+    "answer": ["D", "E"]
+  },
+  {
+    "question": "What is the result of compiling and running the following code?\n\npublic class Test {\n  public static void main(String[] args) {\n    int[] numbers = {1, 2, 3, 4, 5};\n    for (int i : numbers) {\n      System.out.print(i + \" \");\n      if (i == 3) {\n        break;\n      }\n    }\n  }\n}",
+    "options": [
+      "A. 1 2 3 4 5",
+      "B. 1 2 3",
+      "C. Compilation fails.",
+      "D. An exception is thrown at runtime."
+    ],
+    "answer": ["B"]
+  },
+  {
+    "question": "What is the effect of the following code fragment?\n\nStringBuilder sb = new StringBuilder(\"Hello World\");\nsb.delete(0, sb.length());\nsb.append(\"Goodbye\");",
+    "options": [
+      "A. The code will not compile.",
+      "B. sb will contain \"Hello World\".",
+      "C. sb will contain \"Goodbye\".",
+      "D. sb will contain an empty string."
+    ],
+    "answer": ["C"]
+  },
+  {
+    "question": "Given the following code:\n\nint x = 5;\nint y = 10;\nint z = 15;\nSystem.out.println((x > y) ? (y > z) ? \"X\" : \"Y\" : \"Z\");\n\nWhat is the result?",
+    "options": ["A. X", "B. Y", "C. Z", "D. Compilation fails."],
+    "answer": ["C"]
+  },
+  {
+    "question": "Which two statements are true about the switch statement?",
+    "options": [
+      "A. It must contain a default label.",
+      "B. The break statement, at the end of each case block, is optional.",
+      "C. Its case label literals can be changed at runtime.",
+      "D. It accepts String objects as a valid expression in case labels.",
+      "E. It must contain at least one case label."
+    ],
+    "answer": ["B", "D"]
+  },
+  {
+    "question": "Which of the following statements about the 'finally' block is true?",
+    "options": [
+      "A. The finally block is executed only when an exception is thrown.",
+      "B. The finally block is executed only if no exception is thrown.",
+      "C. The finally block is always executed, regardless of whether an exception is thrown or not.",
+      "D. The finally block is optional and does not always need to be used."
+    ],
+    "answer": ["C"]
+  },
+  {
+    "question": "Given:\n\nString str1 = \"abc\";\nString str2 = \"abc\";\nSystem.out.println(str1 == str2);\nSystem.out.println(str1.equals(str2));\n\nWhat is the result?",
+    "options": [
+      "A. true followed by false",
+      "B. false followed by true",
+      "C. true followed by true",
+      "D. false followed by false"
+    ],
+    "answer": ["C"]
+  },
+  {
+    "question": "Which collection class allows you to access its elements by their unique keys?",
+    "options": [
+      "A. java.util.Map",
+      "B. java.util.List",
+      "C. java.util.Set",
+      "D. java.util.Collection"
+    ],
+    "answer": ["A"]
+  },
+  {
+    "question": "What is the output of the following code?\n\nString str = \"java\";\nSystem.out.println(str.substring(1, 3));",
+    "options": ["A. ja", "B. av", "C. va", "D. Error at runtime"],
+    "answer": ["B"]
+  },
+  {
+    "question": "Which of the following statements is true about constructors?",
+    "options": [
+      "A. Constructors can be final.",
+      "B. Constructors can be synchronized.",
+      "C. Constructors can be inherited.",
+      "D. Constructors cannot be abstract."
+    ],
+    "answer": ["D"]
+  },
+  {
+    "question": "What is the output of the following code?\n\nint x = 10;\nint y = 5;\nSystem.out.println(x + y + \"\" + x + y);",
+    "options": ["A. 15", "B. 10510", "C. 10105", "D. Compilation error"],
+    "answer": ["B"]
+  },
+  {
+    "question": "What is the purpose of the 'transient' keyword?",
+    "options": [
+      "A. To make a class not serializable",
+      "B. To make a variable not part of the serialization process",
+      "C. To allow a variable to be serialized multiple times",
+      "D. To make a variable read-only"
+    ],
+    "answer": ["B"]
+  },
+  {
+    "question": "Given the following code, what will be the output?\n\nSystem.out.println(\"Result: \" + (4 + 5 * 3));",
+    "options": [
+      "A. Result: 27",
+      "B. Result: 19",
+      "C. Result: 15",
+      "D. Result: 12"
+    ],
+    "answer": ["B"]
+  },
+  {
+    "question": "Which statement about abstract methods is correct?",
+    "options": [
+      "A. Abstract methods can have a body.",
+      "B. Abstract methods must be implemented in the same class.",
+      "C. Abstract methods can be static.",
+      "D. Abstract methods must be implemented in a subclass."
+    ],
+    "answer": ["D"]
+  },
+  {
+    "question": "What is the output of the following code?\n\nString str = \"ABCDE\";\nSystem.out.println(str.indexOf(\"C\"));",
+    "options": ["A. 1", "B. 2", "C. 3", "D. 4"],
+    "answer": ["B"]
+  },
+  {
+    "question": "Which of the following is a feature of a 'final' method in Java?",
+    "options": [
+      "A. It can be overridden by subclasses.",
+      "B. It cannot be overridden by subclasses.",
+      "C. It must return an integer.",
+      "D. It must be called within the same package."
+    ],
+    "answer": ["B"]
+  },
+  {
+    "question": "Which method in the Math class is used to round a floating-point number to the nearest integer?",
+    "options": ["A. ceil()", "B. floor()", "C. round()", "D. abs()"],
+    "answer": ["C"]
+  },
+  {
+    "question": "What will be the result of the following code?\n\nint[] arr = {1, 2, 3, 4};\nSystem.out.println(arr[1] + arr[3]);",
+    "options": ["A. 5", "B. 6", "C. 7", "D. 10"],
+    "answer": ["C"]
+  },
+  {
+    "question": "Which operator is used for object reference comparison in Java?",
+    "options": ["A. ==", "B. equals()", "C. compareTo()", "D. !="],
+    "answer": ["A"]
+  },
+  {
+    "question": "What is the output of the following code?\n\nint[] arr = {10, 20, 30};\nSystem.out.println(arr[0] + arr[2]);",
+    "options": ["A. 10", "B. 20", "C. 30", "D. 40"],
+    "answer": ["D"]
+  },
+  {
+    "question": "Which of these keywords is used to define an interface in Java?",
+    "options": ["A. class", "B. interface", "C. implements", "D. package"],
+    "answer": ["B"]
+  },
+  {
+    "question": "What is the result of the following code?\n\nString text = \"Java\";\nSystem.out.println(text.length());",
+    "options": ["A. 3", "B. 4", "C. 5", "D. Error"],
+    "answer": ["B"]
+  },
+  {
+    "question": "Which keyword is used in Java to inherit a class?",
+    "options": ["A. super", "B. inherit", "C. extends", "D. this"],
+    "answer": ["C"]
+  },
+  {
+    "question": "What is the output of the following code?\n\nint a = 5;\na *= 2 + 3;\nSystem.out.println(a);",
+    "options": ["A. 10", "B. 15", "C. 25", "D. 20"],
+    "answer": ["C"]
+  },
+  {
+    "question": "Which of the following is not a primitive data type in Java?",
+    "options": ["A. int", "B. float", "C. boolean", "D. String"],
+    "answer": ["D"]
+  },
+  {
+    "question": "What is the result of the following code?\n\nString s = \"Java Programming\";\nSystem.out.println(s.toUpperCase());",
+    "options": [
+      "A. java programming",
+      "B. JAVA PROGRAMMING",
+      "C. Java Programming",
+      "D. Error"
+    ],
+    "answer": ["B"]
+  },
+  {
+    "question": "Which of the following is the superclass of every class in Java?",
+    "options": ["A. Object", "B. Class", "C. System", "D. String"],
+    "answer": ["A"]
+  },
+  {
+    "question": "What does the 'break' statement do in a loop?",
+    "options": [
+      "A. Skips the current iteration",
+      "B. Ends the program",
+      "C. Terminates the loop",
+      "D. Repeats the loop"
+    ],
+    "answer": ["C"]
+  },
+  {
+    "question": "Given the code fragment: public static void main(String[] args) { String[] arr = {\"A\", \"B\", \"C\", \"D\"}; for(int i = 0; i < arr.length; i++){ System.out.print(arr[i] + \" \"); if(arr[i].equals(\"C\")) { continue; } System.out.println(\"Work done\"); break;} } What is the result?",
+    "options": {
+      "A": "A B C Work done",
+      "B": "A B C D Work done",
+      "C": "A Work done",
+      "D": "Compilation fails"
+    },
+    "correctAnswer": ["C"]
+  },
+  {
+    "question": "Given the code fragment: public static void main(String[] args) { int ii = 0; int jj = 7; for(ii = 0; ii < jj - 1; ii = ii + 2) { System.out.print(ii + \" \"); } } What is the result?",
+    "options": {
+      "A": "2 4",
+      "B": "0 2 4 6",
+      "C": "0 2 4",
+      "D": "Compilation fails"
+    },
+    "correctAnswer": ["C"]
+  },
+  {
+    "question": "Given the code fragment: public class Test { static int count = 0; int i = 0; public void changeCount() { while(i < 5) { i++; count++; } } public static void main(String[] args) { Test check1 = new Test(); Test check2 = new Test(); check1.changeCount(); check2.changeCount(); System.out.print(check1.count + \" : \" + check2.count); } } What is the result?",
+    "options": {
+      "A": "10 : 10",
+      "B": "5 : 5",
+      "C": "5 : 10",
+      "D": "Compilation fails"
+    },
+    "correctAnswer": ["A"]
+  },
+  {
+    "question": "Given the code fragment: if(aVar ++ < 10) { System.out.println(aVar + \" Hello World!\"); } else { System.out.println(aVar + \" Hello Universe!\"); } What is the result if the integer aVar is 9?",
+    "options": {
+      "A": "10 Hello World!",
+      "B": "10 Hello Universe!",
+      "C": "9 Hello World!",
+      "D": "Compilation fails."
+    },
+    "correctAnswer": ["A"]
+  },
+  {
+    "question": "Given the code fragment: public static void main(String[] args) { Short s1 = 200; Integer s2 = 400; Long s3 =(long) s1 + s2; //line n1 String s4 =(String)(s3 * s2); //line n2 System.out.println(\"Sum is \" + s4); } What is the result?",
+    "options": {
+      "A": "Sum is 600",
+      "B": "Compilation fails at line n1.",
+      "C": "Compilation fails at line n2.",
+      "D": "A ClassCastException is thrown at line n1.",
+      "E": "A ClassCastException is thrown at line n2."
+    },
+    "correctAnswer": ["C"]
+  },
+  {
+    "question": "What is the main purpose of the 'this' keyword in Java?",
+    "answers": {
+      "a": "To refer to the current class instance",
+      "b": "To call a superclass method",
+      "c": "To access static variables",
+      "d": "To initialize a class"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The 'this' keyword refers to the current object and is used to avoid ambiguity between instance variables and parameters."
+  },
+  {
+    "question": "Which collection class in Java provides a dynamic array?",
+    "answers": {
+      "a": "ArrayList",
+      "b": "LinkedList",
+      "c": "HashMap",
+      "d": "TreeSet"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "ArrayList provides a resizable array implementation in Java's collection framework."
+  },
+  {
+    "question": "What is the significance of the 'package' keyword in Java?",
+    "answers": {
+      "a": "It is used to define a class",
+      "b": "It is used to group related classes",
+      "c": "It is used to specify the version",
+      "d": "It is used for memory management"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "In Java, the 'package' keyword is used to group related classes, making code more modular and manageable."
+  },
+  {
+    "question": "Which method is used to start a thread in Java?",
+    "answers": {
+      "a": "begin()",
+      "b": "run()",
+      "c": "start()",
+      "d": "execute()"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "The 'start()' method is used to begin the execution of a new thread, calling the 'run()' method internally."
+  },
+  {
+    "question": "What will be the output of the following code?\n\nint x = 7;\nint y = x >> 2;\nSystem.out.println(y);",
+    "answers": {
+      "a": "1",
+      "b": "3",
+      "c": "2",
+      "d": "0"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The right shift operator '>>' shifts bits to the right, so x >> 2 shifts 7 by 2 bits, resulting in 3."
+  },
+  {
+    "question": "In Java, which exception is thrown when an array is accessed with a negative index?",
+    "answers": {
+      "a": "ArrayIndexOutOfBoundsException",
+      "b": "IllegalArgumentException",
+      "c": "IndexOutOfBoundsException",
+      "d": "NullPointerException"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "An ArrayIndexOutOfBoundsException is thrown if you try to access an array with a negative index."
+  },
+  {
+    "question": "Which of the following statements is true about an abstract method?",
+    "answers": {
+      "a": "It has a body",
+      "b": "It can be private",
+      "c": "It has no implementation",
+      "d": "It must be static"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "An abstract method in Java has no implementation and is meant to be overridden by subclasses."
+  },
+  {
+    "question": "Given the following main method: public static void main(String [] args) { int num = 5; do { System.out.print(num +\" \"); } while(num == 0); } What is the result?",
+    "options": [
+      "A. 5 4 3 2 1 0",
+      "B. 5 4 3 2 1",
+      "C. 4 2 1",
+      "D. 5",
+      "E. Nothing is printed"
+    ],
+    "answer": ["D"]
+  },
+  {
+    "question": "Given the code fragment: int x = 100; int a = x++ ; int b = ++x; int c = x++ ; int d =(a < b) ?(a < c) ? a:(b <c ) ? b: c; System.out.println(d) ; What is the result?",
+    "options": ["A. 100", "B. 101", "C. 102", "D. 103", "E. Compilation fails"],
+    "answer": ["E"]
+  },
+  {
+    "question": "Given: public class Test { public static void main(String[] args) { String[][] chs = new String[2][]; chs[0] = new String[2]; chs[1] = new String[5]; int i = 97; for(int a = 0; a < chs.length; a++) { for(int b = 0; b < chs.length; b++) { chs [a] [b] = \" \" + i; i++; } } for(String[] ca : chs) { for(String c : ca) { System.out.print(c + \" \"); } System.out.println(); } } } What is the result?",
+    "options": [
+      "A. 97 98 99 100 null null null",
+      "B. 91 98 99 100 101 102 103",
+      "C. Compilation fails.",
+      "D. A NullPointerException is thrown at runtime.",
+      "E. An ArrayIndexOutOfBoundsException is thrown at runtime."
+    ],
+    "answer": ["A"]
+  },
+  {
+    "question": "Given: public class Student { public String name = \"\"; public int age = 0; public String major = \"Undeclared\"; public boolean fulltime = true; public void display() { System.out.println(\"Name: \" + name + \" Major: \" + major); } public boolean isFullTime() { return fulltime; } } Which line of code initializes a student instance?",
+    "options": [
+      "A. Student student1;",
+      "B. Student student1 = Student.new();",
+      "C. Student student1 = new Student();",
+      "D. Student student1 = Student();"
+    ],
+    "answer": ["C"]
+  },
+  {
+    "question": "What should keyword1 and keyword2 be respectively, in order to produce output 2345? int [] array = {1,2,3,4,5}; for(int i: array) { if( i < 2) { keyword1 ; } System.out.print(i); if( i == 3) { keyword2 ; } }",
+    "options": [
+      "A. continue, break",
+      "B. break, break",
+      "C. break, continue",
+      "D. continue, continue"
+    ],
+    "answer": ["D"]
+  },
+  {
+    "question": "What is the result? int i, j=0; i =(3* 2 +4 +5 ) ; j =(3 *((2+4) + 5)); System.out.println(\"i:\"+ i + \"\\nj:\"+j);",
+    "options": [
+      "A. i: 16 j: 33",
+      "B. i: 15 j:33",
+      "C. i:33 j:23",
+      "D. i:15 j:23"
+    ],
+    "answer": ["B"]
+  },
+
+  {
+    "question": "Given the code fragment: public static void main(String[] args) { String[] arr = {\"A\", \"B\", \"C\", \"D\"}; for(int i = 0; i < arr.length; i++){ System.out.print(arr[i] + \" \"); if(arr[i].equals(\"C\")) { continue; } System.out.println(\"Work done\"); break;} } What is the result?",
+    "options": [
+      "A. A B C Work done",
+      "B. A B C D Work done",
+      "C. A Work done",
+      "D. Compilation fails"
+    ],
+    "answers": ["C"]
+  },
+  {
+    "question": "Given the code fragment: public static void main(String[] args) { int ii = 0; int jj = 7; for(ii = 0; ii < jj - 1; ii = ii + 2) { System.out.print(ii + \" \"); } } What is the result?",
+    "options": ["A. 2 4", "B. 0 2 4 6", "C. 0 2 4", "D. Compilation fails"],
+    "answers": ["C"]
+  },
+  {
+    "question": "Given the code fragment: public class Test { static int count = 0; int i = 0; public void changeCount() { while(i < 5) { i++; count++; } } public static void main(String[] args) { Test check1 = new Test(); Test check2 = new Test(); check1.changeCount(); check2.changeCount(); System.out.print(check1.count + \" : \" + check2.count); } } What is the result?",
+    "options": ["A. 10 : 10", "B. 5 : 5", "C. 5 : 10", "D. Compilation fails"],
+    "answers": ["A"]
+  },
+  {
+    "question": "Given the code fragment: if(aVar ++ < 10) { System.out.println(aVar + \" Hello World!\"); } else { System.out.println(aVar + \" Hello Universe!\"); } What is the result if the integer aVar is 9?",
+    "options": [
+      "A. 10 Hello World!",
+      "B. 10 Hello Universe!",
+      "C. 9 Hello World!",
+      "D. Compilation fails."
+    ],
+    "answers": ["A"]
+  },
+  {
+    "question": "Given the code fragment: public static void main(String[] args) { Short s1 = 200; Integer s2 = 400; Long s3 =(long) s1 + s2; //line n1 String s4 =(String)(s3 * s2); //line n2 System.out.println(\"Sum is \" + s4); } What is the result?",
+    "options": [
+      "A. Sum is 600",
+      "B. Compilation fails at line n1.",
+      "C. Compilation fails at line n2.",
+      "D. A ClassCastException is thrown at line n1.",
+      "E. A ClassCastException is thrown at line n2."
+    ],
+    "answers": ["C"]
+  },
+  {
+    "question": "Your friend keeps telling you 'Don't redeem the card!' in a message. How can you check in Java if the message really contains the word 'redeem'?",
+    "options": [
+      "A. `message.contains(\"redeem\");`",
+      "B. `message.indexOf(\"redeem\") >= 0;`",
+      "C. `message.equals(\"redeem\");`",
+      "D. `message.charAt(0) == 'r';`"
+    ],
+    "answers": ["A", "B"]
+  },
+  {
+    "question": "You want to check if the message 'Matthias soll zurück zu unserer Klasse' ends with 'Klasse'. Which line of Java code will confirm this?",
+    "options": [
+      "A. `message.endsWith(\"Klasse\");`",
+      "B. `message.equals(\"Klasse\");`",
+      "C. `message.contains(\"Klasse\");`",
+      "D. `message.charAt(message.length() - 1) == 'e';`"
+    ],
+    "answers": ["A"]
+  },
+  {
+    "question": "Matthias hat seine Rückkehr zur Klasse auf einem Boolean-Flag gespeichert. Welcher Wert sollte das Flag haben, wenn er zurückkehrt?",
+    "answers": {
+      "a": "true",
+      "b": "false",
+      "c": "null",
+      "d": "1"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "Ein Boolean-Flag, das 'true' ist, könnte anzeigen, dass Matthias zur Klasse zurückkehrt."
   }
-  
 ]

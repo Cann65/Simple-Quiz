@@ -14,7 +14,7 @@ let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let correctCount = 0;
-let timeLeft = 200 * 60; // 200 Minuten in Sekunden
+let timeLeft = 50 * 60; // 200 Minuten in Sekunden
 let selectedAnswers = new Set();
 let questionAnsweredIncorrectly = false;
 let numberOfQuestions = 50;
@@ -41,7 +41,7 @@ function startQuiz() {
   score = 0;
   correctCount = 0;
   currentQuestionIndex = 0;
-  timeLeft = 200 * 60;
+  timeLeft = 50 * 60;
   questionAnsweredIncorrectly = false;
   selectedAnswers.clear();
 
