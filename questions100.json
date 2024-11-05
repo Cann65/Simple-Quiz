@@ -1,1538 +1,1182 @@
 [
   {
-    "question": "What is the purpose of garbage collection in Java?",
+    "question": "Given the contents of the Test.java file:\n\nclass MyClass {\n    private int var1 = 100;\n    public int var2 = 200;\n    public void doCalc() {\n        var1 = 100 * 2; // line n1\n        var2 = 200 * 2;\n    }\n}\n\npublic class Test {\n    public static void main(String[] args) {\n        MyClass t = new MyClass();\n        t.doCalc();\n        System.out.println(t.var1 + \" : \" + t.var2); // line n2\n    }\n}\n\nWhat is the result?",
     "answers": {
-      "a": "To free memory",
-      "b": "To allocate memory",
-      "c": "To clear variables",
-      "d": "To end the program"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "Garbage collection in Java helps in freeing up memory by removing unused objects."
-  },
-  {
-    "question": "Which of the following are programming languages?",
-    "answers": {
-      "a": "Python",
-      "b": "HTML",
-      "c": "CSS",
-      "d": "Java"
-    },
-    "correctAnswer": ["a", "d"],
-    "explanation": "Python and Java are programming languages; HTML and CSS are markup and styling languages."
-  },
-  {
-    "question": "Which are Java keywords?",
-    "answers": {
-      "a": "final",
-      "b": "String",
-      "c": "public",
-      "d": "loop"
-    },
-    "correctAnswer": ["a", "c"],
-    "explanation": "'final' and 'public' are Java keywords; 'String' is a class, and 'loop' is not a keyword."
-  },
-  {
-    "question": "Which statement is correct about interfaces in Java?",
-    "answers": {
-      "a": "Interfaces can contain constructors.",
-      "b": "All methods in interfaces are implicitly public and abstract.",
-      "c": "A class can implement only one interface.",
-      "d": "Methods in interfaces can be private."
-    },
-    "correctAnswer": ["b"],
-    "explanation": "In Java, interfaces cannot contain constructors, and methods are implicitly public and abstract. A class can implement multiple interfaces, but interfaces cannot have private methods."
-  },
-  {
-    "question": "What is the result of the following code? int x = 3; int y = ++x * 5 / x-- + --x;",
-    "answers": {
-      "a": "y = 7",
-      "b": "y = 6",
-      "c": "y = 8",
-      "d": "y = 9"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "Due to the order of increments and decrements, the calculation follows a specific sequence: ++x makes x=4, then 4*5/4 + 2, resulting in y = 6."
-  },
-  {
-    "question": "Which of the following is a feature of the Java programming language?",
-    "answers": {
-      "a": "Platform-dependent",
-      "b": "Multiple inheritance",
-      "c": "Platform-independent",
-      "d": "Single-threaded"
+      "a": "200 : 400",
+      "b": "A compilation error occurs at line n1.",
+      "c": "A compilation error occurs at line n2.",
+      "d": "100 : 400"
     },
     "correctAnswer": ["c"],
-    "explanation": "Java is platform-independent because it runs on the Java Virtual Machine (JVM), which allows it to operate across different operating systems without recompilation."
+    "explanation": "var1 is declared private in the MyClass class, so it is not accessible from the Test class."
   },
   {
-    "question": "What will be the output of the following code?\n\nint a = 5; int b = a++ + ++a; System.out.println(b);",
+    "question": "Given:\n\npublic static void main(String[] args) {\n    int iterations = 100;\n    while (count < iterations) {\n        System.out.println(\"Iteration \" + count);\n        count++;\n    }\n}\n\nWhat is the result?",
     "answers": {
-      "a": "11",
-      "b": "12",
-      "c": "10",
-      "d": "Compiler error"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The value of 'a' is incremented twice: first with post-increment (5), then with pre-increment, resulting in 12 for 'b'."
-  },
-  {
-    "question": "Which method is used to compare two strings in Java for equality?",
-    "answers": {
-      "a": "compare()",
-      "b": "==",
-      "c": "equals()",
-      "d": "compareTo()"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "In Java, the equals() method compares the contents of two strings for equality, unlike ==, which compares memory references."
-  },
-  {
-    "question": "What is the default value of a boolean variable in Java?",
-    "answers": {
-      "a": "true",
-      "b": "false",
-      "c": "0",
-      "d": "null"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "In Java, the default value of a boolean variable is false."
-  },
-  {
-    "question": "Which of the following statements is true about inheritance in Java?",
-    "answers": {
-      "a": "Java supports multiple inheritance through classes.",
-      "b": "Java supports multiple inheritance through interfaces.",
-      "c": "Java does not support inheritance.",
-      "d": "Java allows a class to inherit from multiple classes directly."
-    },
-    "correctAnswer": ["b"],
-    "explanation": "Java does not support multiple inheritance through classes, but it does through interfaces, allowing a class to implement multiple interfaces."
-  },
-  {
-    "question": "What is the size of an int variable in Java?",
-    "answers": {
-      "a": "8 bits",
-      "b": "16 bits",
-      "c": "32 bits",
-      "d": "64 bits"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "In Java, an int variable occupies 32 bits or 4 bytes of memory."
-  },
-  {
-    "question": "Which of the following options can be used to declare an array in Java?",
-    "answers": {
-      "a": "int arr[] = new int[5];",
-      "b": "int arr[] = new int[5]();",
-      "c": "int arr = new int(5);",
-      "d": "int arr(5);"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "The correct way to declare an array in Java is 'int arr[] = new int[5];'. Other options contain syntax errors."
-  },
-  {
-    "question": "Which keyword is used to inherit a class in Java?",
-    "answers": {
-      "a": "implement",
-      "b": "extends",
-      "c": "inherits",
-      "d": "super"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "In Java, the 'extends' keyword is used to inherit a class, allowing the subclass to inherit properties and methods from the superclass."
-  },
-  {
-    "question": "What is the output of the following code?\n\nString str = \"Hello\";\nSystem.out.println(str.charAt(1));",
-    "answers": {
-      "a": "H",
-      "b": "e",
-      "c": "l",
-      "d": "o"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The charAt() method returns the character at the specified index, and index 1 in \"Hello\" is 'e'."
-  },
-  {
-    "question": "Which of these is not a valid access modifier in Java?",
-    "answers": {
-      "a": "public",
-      "b": "protected",
-      "c": "private",
-      "d": "internal"
+      "a": "The program compiles and nothing is printed.",
+      "b": "Iteration plus an increasing number is printed 100 times.",
+      "c": "Iteration plus an increasing number is printed 99 times.",
+      "d": "An error occurs during compilation."
     },
     "correctAnswer": ["d"],
-    "explanation": "'internal' is not a valid access modifier in Java. Java uses 'public', 'protected', and 'private' as access modifiers."
+    "explanation": "Variable 'count' is not declared, which results in a compilation error."
   },
   {
-    "question": "Which of these keywords is used to define an abstract class in Java?",
+    "question": "Given:\n\nString test = \"a\";\nfor (; test.compareTo(\"aaa\") == 0; test = test + \"a\")\n    System.out.println(test.length() + \" \");\nSystem.out.println(test);\n\nWhat is the output?",
     "answers": {
-      "a": "interface",
-      "b": "abstract",
-      "c": "virtual",
-      "d": "extends"
+      "a": "1 2 3 aaaa",
+      "b": "1 2 aaa",
+      "c": "Compilation fails",
+      "d": "a"
     },
-    "correctAnswer": ["b"],
-    "explanation": "The 'abstract' keyword in Java is used to declare a class that cannot be instantiated and may contain abstract methods."
+    "correctAnswer": ["d"],
+    "explanation": "The condition in the for-loop is never true, so the variable 'test' remains unchanged."
   },
   {
-    "question": "What will be the output of the following code?\n\nint x = 5;\nSystem.out.println(x++);\nSystem.out.println(++x);",
+    "question": "Which two components can class declarations include?",
     "answers": {
-      "a": "5 and 6",
-      "b": "5 and 7",
-      "c": "6 and 7",
-      "d": "Compiler error"
+      "a": "A list of instance methods",
+      "b": "The main method",
+      "c": "Interfaces implemented by the class",
+      "d": "The public modifier"
     },
-    "correctAnswer": ["b"],
-    "explanation": "x++ (post-increment) outputs 5, then x becomes 6. ++x (pre-increment) makes x 7 before outputting."
+    "correctAnswer": ["c", "d"],
+    "explanation": "Instance methods and the main method belong in the class body, while the public modifier and implemented interfaces can be part of a class declaration."
   },
   {
-    "question": "Which exception is thrown when dividing by zero in Java?",
+    "question": "Which package would you import to use the Random class?",
     "answers": {
-      "a": "NullPointerException",
-      "b": "ArithmeticException",
-      "c": "ArrayIndexOutOfBoundsException",
-      "d": "IllegalArgumentException"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "In Java, dividing by zero throws an ArithmeticException."
-  },
-  {
-    "question": "What is the default value of an object reference variable in Java if it is an instance variable?",
-    "answers": {
-      "a": "0",
-      "b": "null",
-      "c": "undefined",
-      "d": "An empty object"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "In Java, the default value of an object reference that is not initialized is 'null'."
-  },
-  {
-    "question": "Which operator is used by Java to concatenate strings?",
-    "answers": {
-      "a": "+",
-      "b": "&",
-      "c": "*",
-      "d": "%"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "The '+' operator is used to concatenate strings in Java."
-  },
-  {
-    "question": "What is the output of the following code?\n\nString str = \"Java\";\nstr.concat(\" Programming\");\nSystem.out.println(str);",
-    "answers": {
-      "a": "Java Programming",
-      "b": "Java",
-      "c": "Programming",
-      "d": "Compiler error"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "Strings are immutable in Java. The concat() method does not change 'str'; it returns a new String that would need to be assigned."
-  },
-  {
-    "question": "Which of the following loops will always execute at least once?",
-    "answers": {
-      "a": "for loop",
-      "b": "while loop",
-      "c": "do-while loop",
-      "d": "enhanced for loop"
+      "a": "java.io",
+      "b": "java.math",
+      "c": "java.util",
+      "d": "java.lang"
     },
     "correctAnswer": ["c"],
-    "explanation": "The 'do-while' loop always executes at least once because the condition is checked after the loop body executes."
+    "explanation": "The Random class is part of the java.util package."
   },
   {
-    "question": "What is the size of a char variable in Java?",
+    "question": "Given the code fragment:\n\nRandom r1 = new Random(10);\nRandom r2 = new Random(10);\nif (r1.nextInt() == r2.nextInt()) {\n    System.out.println(\"Jack\");\n} else {\n    System.out.println(\"Queen\");\n}\n\nWhat is the result?",
     "answers": {
-      "a": "8 bits",
-      "b": "16 bits",
-      "c": "32 bits",
-      "d": "64 bits"
+      "a": "A compilation error occurs at line n1.",
+      "b": "Jack",
+      "c": "The program prints either Jack or Queen.",
+      "d": "Queen"
     },
     "correctAnswer": ["b"],
-    "explanation": "In Java, a char variable occupies 16 bits (2 bytes) because Java uses Unicode characters."
+    "explanation": "Both Random objects are initialized with the same seed, so they generate identical sequences, resulting in 'Jack' being printed."
   },
   {
-    "question": "Which method in Java is used to find the length of a string?",
+    "question": "Given the code fragment:\n\nint num[] = new int[3];\nnum[1] = 10;\nnum[2] = 15;\nList<Integer> lst = new ArrayList<>(3);\nlst.add(10);\nlst.add(15);\nSystem.out.println(num);\nSystem.out.println(lst);\n\nWhat is the result?",
     "answers": {
-      "a": "length()",
-      "b": "size()",
-      "c": "getSize()",
-      "d": "count()"
+      "a": "a memory address in hexadecimal number format",
+      "b": "10, 15",
+      "c": "0, 10, 15",
+      "d": "[10, 15]"
     },
-    "correctAnswer": ["a"],
-    "explanation": "The 'length()' method in Java returns the number of characters in a string."
+    "correctAnswer": ["d"],
+    "explanation": "Arrays do not override the toString method, so they print a memory address. ArrayList overrides it to display contents in brackets."
   },
   {
-    "question": "What is the superclass of all classes in Java?",
+    "question": "What is the result of the following code?\n\nint a = 3;\na = ++a + a++;\na = --a - a--;\nSystem.out.println(a);",
     "answers": {
-      "a": "Object",
-      "b": "Main",
-      "c": "Class",
-      "d": "System"
+      "a": "8",
+      "b": "3",
+      "c": "0",
+      "d": "A compilation error occurs."
     },
-    "correctAnswer": ["a"],
-    "explanation": "In Java, 'Object' is the superclass of all classes. Every class in Java implicitly inherits from Object."
+    "correctAnswer": ["c"],
+    "explanation": "The complex increment and decrement operations result in 'a' eventually equaling 0."
   },
   {
-    "question": "Which keyword is used to prevent inheritance in Java?",
+    "question": "Given:\n\nString[] flowers = {\"lotus\", \"lily\", \"rose\", \"jasmine\"};\nfor (String c : flowers) {\n    if (c.length() < 4) {\n        continue;\n    }\n    System.out.print(c + \" \");\n    if (c.length() == 4) {\n        break;\n    }\n}\n\nWhat is the result?",
     "answers": {
-      "a": "static",
-      "b": "final",
-      "c": "const",
-      "d": "super"
+      "a": "lotus jasmine",
+      "b": "lotus",
+      "c": "A compilation error occurs.",
+      "d": "lotus lily"
+    },
+    "correctAnswer": ["d"],
+    "explanation": "'lotus' is printed, followed by 'lily' which meets the second condition and breaks the loop."
+  },
+  {
+    "question": "Given:\n\nList<String> names = new ArrayList<>();\nnames.add(\"Joel\");\nnames.add(\"Paul\");\nnames.remove(0);\nnames.remove(0);\nSystem.out.println(names.isEmpty());\nnames.add(\"Joel\");\nnames.add(\"Paul\");\nnames.clear();\nSystem.out.println(names.isEmpty());\n\nWhat is the result?",
+    "answers": {
+      "a": "false true",
+      "b": "true true",
+      "c": "false false",
+      "d": "A runtime exception is thrown"
     },
     "correctAnswer": ["b"],
-    "explanation": "The 'final' keyword prevents inheritance by marking the class as final, meaning it cannot be extended by other classes."
+    "explanation": "After removing all elements, isEmpty() returns true. Adding elements again and calling clear() makes isEmpty() return true once more."
   },
   {
-    "question": "What is the output of the following code?\n\nint x = 10;\nSystem.out.println(x > 5 ? x < 10 ? 1 : 0 : -1);",
+    "question": "Identify three features of the Java programming language.",
+    "answers": {
+      "a": "distributed",
+      "b": "direct memory management",
+      "c": "multithreaded",
+      "d": "strongly typed",
+      "e": "dynamically typed"
+    },
+    "correctAnswer": ["a", "c", "d"],
+    "explanation": "Java is distributed, multithreaded, and strongly typed."
+  },
+  {
+    "question": "Given:\n\npublic static void main(String[] args) {\n    double num = -25.67;\n    System.out.println(Math.abs(num));\n}\n\nWhat is the result?",
+    "answers": {
+      "a": "25.67",
+      "b": "25.00",
+      "c": "25.7",
+      "d": "26"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "Math.abs returns the absolute value, converting negative values to positive."
+  },
+  {
+    "question": "Identify three advantages of object-oriented programming.",
+    "answers": {
+      "a": "separation of state and behavior",
+      "b": "modularity",
+      "c": "information sharing",
+      "d": "code reuse",
+      "e": "information hiding"
+    },
+    "correctAnswer": ["b", "d", "e"],
+    "explanation": "Advantages of OOP include modularity, code reuse, and information hiding."
+  },
+  {
+    "question": "Given the code fragment:\n\nint[] arr1 = {1, 2, 3};\nint[] arr2 = new int[2];\narr2[0] = 10;\nSystem.out.println(arr1.length + \" : \" + arr2.length);\n\nWhat is the result?",
+    "answers": {
+      "a": "3 : 1",
+      "b": "3 : 2",
+      "c": "0 : 1",
+      "d": "2 : 0"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "arr1 has a length of 3, while arr2 has a length of 2."
+  },
+  {
+    "question": "Given:\n\nint count = 0;\nwhile (count <= 10) {\n    System.out.print(count + \" \");\n    /* line n1 */\n}\n\nWhich statement, when inserted at line n1, enables the code to print 0 2 4 6 8 10?",
+    "answers": {
+      "a": "count = (count++) + 1;",
+      "b": "count = count++;",
+      "c": "count =+ 2;",
+      "d": "count += 2;"
+    },
+    "correctAnswer": ["d"],
+    "explanation": "The correct way to increment 'count' by 2 is 'count += 2;'."
+  },
+  {
+    "question": "Given:\n\nList<String> fls = new ArrayList<>();\nfls.add(\"jasmine\");\nfls.add(\"rose\");\nfls.add(\"lotus\");\nfls.remove(2);\nfls.set(2, \"lily\");\nSystem.out.println(fls);\n\nWhat is the result?",
+    "answers": {
+      "a": "[jasmine, rose, lily]",
+      "b": "A runtime exception is thrown.",
+      "c": "[jasmine, lily, lotus]",
+      "d": "[jasmine, rose, lotus, lily]"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "An IndexOutOfBoundException occurs because index 2 no longer exists after removal."
+  },
+  {
+    "question": "What is the meaning of 'write once, run anywhere' in Java?",
+    "answers": {
+      "a": "Java programs are designed to run only in web browsers and, thus, can run wherever there is a browser.",
+      "b": "It is a marketing statement because Java programs must be compiled for a specific platform in order to run.",
+      "c": "Java programs can run on any Java Virtual Machine without being recompiled.",
+      "d": "Java programs, after being compiled, can run on any platform or device even without a Java Virtual Machine."
+    },
+    "correctAnswer": ["c"],
+    "explanation": "'Write once, run anywhere' means Java programs run on any JVM without recompilation."
+  },
+  {
+    "question": "Given:\n\nint number = 1;\nString s = null;\ntry {\n    number = s.length();\n    number += 2;\n} catch (RuntimeException e) {\n    number += 4;\n}\nSystem.out.println(number);\n\nWhat is the result?",
     "answers": {
       "a": "1",
-      "b": "0",
-      "c": "-1",
-      "d": "Compiler error"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The code uses nested ternary operators. Since x=10, x>5 is true, so it checks x<10, which is false, resulting in 0."
-  },
-  {
-    "question": "Which of the following is a wrapper class in Java?",
-    "answers": {
-      "a": "Integer",
-      "b": "int",
-      "c": "double",
-      "d": "float"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "Wrapper classes in Java, like Integer, Double, and Float, wrap primitive types in an object."
-  },
-  {
-    "question": "What does the 'this' keyword represent in Java?",
-    "answers": {
-      "a": "The current object",
-      "b": "The superclass object",
-      "c": "A static method",
-      "d": "A new instance of a class"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "'this' refers to the current object and is used to access instance variables and methods."
-  },
-  {
-    "question": "Which method can be used to convert a string to uppercase in Java?",
-    "answers": {
-      "a": "toUpperCase()",
-      "b": "toUpper()",
-      "c": "uppercase()",
-      "d": "upper()"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "The 'toUpperCase()' method converts all characters of a string to uppercase."
-  },
-  {
-    "question": "What is the default value of an int variable in Java?",
-    "answers": {
-      "a": "0",
-      "b": "null",
-      "c": "undefined",
-      "d": "1"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "The default value of an int variable in Java is 0 if it's an instance variable."
-  },
-  {
-    "question": "Which statement is used to terminate a loop in Java?",
-    "answers": {
-      "a": "return",
-      "b": "break",
-      "c": "continue",
-      "d": "exit"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The 'break' statement terminates the loop and transfers control to the code after the loop."
-  },
-  {
-    "question": "What is the purpose of the 'static' keyword in Java?",
-    "answers": {
-      "a": "It makes a variable immutable.",
-      "b": "It allows a method or variable to belong to the class rather than any instance.",
-      "c": "It prevents inheritance.",
-      "d": "It is used to initialize an object."
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The 'static' keyword allows a field or method to belong to the class itself, not instances of the class."
-  },
-  {
-    "question": "Which of the following is a checked exception in Java?",
-    "answers": {
-      "a": "ArithmeticException",
-      "b": "ArrayIndexOutOfBoundsException",
-      "c": "FileNotFoundException",
-      "d": "NullPointerException"
+      "b": "3",
+      "c": "5",
+      "d": "Nothing is printed."
     },
     "correctAnswer": ["c"],
-    "explanation": "FileNotFoundException is a checked exception, meaning it must be either caught or declared in the method signature."
+    "explanation": "A NullPointerException occurs, which is caught, and 4 is added to 'number', making it 5."
   },
   {
-    "question": "What is the correct way to declare a variable to store a floating-point number in Java?",
+    "question": "Given:\n\npublic class Test {\n    int var1; // line n1\n    public static void main(String[] args) {\n        int var2; // line n2\n        Test obj = new Test();\n        int var3 = var2 + obj.var1;\n        System.out.println(var3);\n    }\n}\n\nWhat is the result?",
     "answers": {
-      "a": "float num = 5.5;",
-      "b": "float num = 5.5f;",
-      "c": "float num = '5.5';",
-      "d": "float num = \"5.5\";"
+      "a": "Compilation fails. To make it compile, replace line n1 with: int var1 = 0;",
+      "b": "Compilation fails. To make it compile, replace line n2 with: int var2 = 0;",
+      "c": "0",
+      "d": "Nothing is printed."
     },
     "correctAnswer": ["b"],
-    "explanation": "In Java, floating-point literals must have an 'f' or 'F' suffix for float types."
+    "explanation": "var2 must be initialized, causing a compilation error if it's not."
   },
   {
-    "question": "How many bits are used to represent the Unicode characters in Java?",
+    "question": "What does 'import java.io.*' mean?",
     "answers": {
-      "a": "8 bits",
-      "b": "16 bits",
-      "c": "32 bits",
-      "d": "64 bits"
+      "a": "Only the io class is imported.",
+      "b": "All classes in the io package are imported.",
+      "c": "All classes whose names start with io are imported.",
+      "d": "All classes in the io package and the subpackages of io packages, if any, are imported."
     },
     "correctAnswer": ["b"],
-    "explanation": "Java uses 16-bit Unicode to represent characters, allowing a wide range of characters from various languages."
-  },
-  {
-    "question": "Which class in Java is used to handle file input and output?",
-    "answers": {
-      "a": "FileReader",
-      "b": "FileWriter",
-      "c": "File",
-      "d": "IOException"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "The File class in Java is used to create, delete, and manipulate file and directory paths, whereas FileReader and FileWriter are specifically for reading and writing files."
-  },
-  {
-    "question": "What is the main feature of encapsulation in Java?",
-    "answers": {
-      "a": "It increases visibility.",
-      "b": "It allows unrestricted access to data.",
-      "c": "It restricts access to certain components.",
-      "d": "It is used for inheritance."
-    },
-    "correctAnswer": ["c"],
-    "explanation": "Encapsulation in Java restricts access to components and protects data within a class by using access modifiers like private."
-  },
-  {
-    "question": "What will be the output of the following code?\n\nint a = 5, b = 10;\na = a + b;\nb = a - b;\na = a - b;\nSystem.out.println(a + \" \" + b);",
-    "answers": {
-      "a": "5 10",
-      "b": "10 5",
-      "c": "0 10",
-      "d": "10 0"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The code swaps the values of 'a' and 'b' without using a temporary variable, resulting in 10 for 'a' and 5 for 'b'."
-  },
-  {
-    "question": "Which of the following statements is true about a constructor in Java?",
-    "answers": {
-      "a": "A constructor must have a return type.",
-      "b": "A constructor is called when an object is created.",
-      "c": "A constructor cannot have parameters.",
-      "d": "A class can have only one constructor."
-    },
-    "correctAnswer": ["b"],
-    "explanation": "A constructor is a special method that initializes an object and is automatically called upon object creation."
-  },
-  {
-    "question": "Which data structure uses the LIFO (Last In, First Out) principle?",
-    "answers": {
-      "a": "Queue",
-      "b": "Stack",
-      "c": "Linked List",
-      "d": "Array"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "A stack operates on the LIFO principle, where the last element added is the first one to be removed."
-  },
-  {
-    "question": "Which operator is used to check if two variables are equal in Java?",
-    "answers": {
-      "a": "=",
-      "b": "==",
-      "c": "===",
-      "d": "equals()"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The '==' operator checks if two primitive variables have the same value, whereas equals() is used for object content comparison."
-  },
-  {
-    "question": "Which of the following statements is correct about the main() method in Java?",
-    "answers": {
-      "a": "It is called automatically when a program starts.",
-      "b": "It must return an int value.",
-      "c": "It can only be private.",
-      "d": "It is not required in all Java programs."
-    },
-    "correctAnswer": ["a"],
-    "explanation": "The main() method is the entry point for Java applications and is automatically called when the program starts."
-  },
-  {
-    "question": "What will the following code output?\n\nSystem.out.println(\"Hello \" + 5 + 3);",
-    "answers": {
-      "a": "Hello 8",
-      "b": "Hello 53",
-      "c": "Hello 5 3",
-      "d": "Compiler error"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "Java concatenates 'Hello ' + 5 first, treating it as a string. Then it concatenates + 3, resulting in 'Hello 53'."
-  },
-  {
-    "question": "Which of these is used to handle exceptions in Java?",
-    "answers": {
-      "a": "throw",
-      "b": "catch",
-      "c": "try-catch",
-      "d": "error"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "The try-catch block is used to handle exceptions, catching errors that may occur in code execution."
-  },
-  {
-    "question": "Which of the following statements is true about the finalize() method in Java?",
-    "answers": {
-      "a": "It is a private method.",
-      "b": "It is used for garbage collection.",
-      "c": "It must be called explicitly.",
-      "d": "It is only available in interfaces."
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The finalize() method is called by the garbage collector before an object is removed from memory, allowing clean-up operations."
-  },
-  {
-    "question": "What is the output of the following code?\n\nString str = \"java\";\nSystem.out.println(str.toUpperCase());",
-    "answers": {
-      "a": "java",
-      "b": "JAVA",
-      "c": "Java",
-      "d": "Compiler error"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The toUpperCase() method converts all characters in the string to uppercase, resulting in 'JAVA'."
-  },
-  {
-    "question": "Which of these is not a primitive data type in Java?",
-    "answers": {
-      "a": "boolean",
-      "b": "int",
-      "c": "String",
-      "d": "char"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "In Java, 'String' is not a primitive data type; it is a class, while boolean, int, and char are primitive types."
-  },
-  {
-    "question": "What is the purpose of the 'super' keyword in Java?",
-    "answers": {
-      "a": "To call a superclass constructor",
-      "b": "To define a superclass",
-      "c": "To refer to the current object",
-      "d": "To prevent inheritance"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "'super' is used to refer to a superclass instance or call its constructor in a subclass."
-  },
-  {
-    "question": "What does the instanceof keyword do in Java?",
-    "answers": {
-      "a": "Compares two strings",
-      "b": "Checks if an object is an instance of a specified class",
-      "c": "Checks for null",
-      "d": "Casts an object to another type"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The instanceof keyword checks if an object is an instance of a specific class or subclass."
-  },
-  {
-    "question": "Which exception is thrown if an array is accessed with an illegal index in Java?",
-    "answers": {
-      "a": "NullPointerException",
-      "b": "ArrayIndexOutOfBoundsException",
-      "c": "ArithmeticException",
-      "d": "ClassCastException"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "Accessing an array with an invalid index in Java throws an ArrayIndexOutOfBoundsException."
-  },
-  {
-    "question": "What is the result of the following code?\n\nint a = 1; a += 5 + ++a;\nSystem.out.println(a);",
-    "answers": {
-      "a": "7",
-      "b": "8",
-      "c": "9",
-      "d": "10"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "The expression evaluates as a = a + (5 + 2), resulting in a = 9."
-  },
-  {
-    "question": "What does the Java 'javac' command do?",
-    "answers": {
-      "a": "Runs Java applications",
-      "b": "Compiles Java source files",
-      "c": "Installs Java packages",
-      "d": "Creates Java interfaces"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The 'javac' command is used to compile Java source files into bytecode."
-  },
-  {
-    "question": "Which of these is a method of the Object class in Java?",
-    "answers": {
-      "a": "toString()",
-      "b": "append()",
-      "c": "substring()",
-      "d": "print()"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "toString() is a method of the Object class, while the other methods belong to different classes."
-  },
-  {
-    "question": "What does the keyword 'void' signify in a method declaration?",
-    "answers": {
-      "a": "The method returns an integer.",
-      "b": "The method returns nothing.",
-      "c": "The method is a constructor.",
-      "d": "The method can return any type."
-    },
-    "correctAnswer": ["b"],
-    "explanation": "'void' indicates that the method does not return any value."
-  },
-  {
-    "question": "Which keyword is used to define a constant variable in Java?",
-    "answers": {
-      "a": "const",
-      "b": "final",
-      "c": "static",
-      "d": "constant"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The 'final' keyword in Java is used to declare a variable as constant, meaning it cannot be modified after initialization."
-  },
-  {
-    "question": "What is the result of the following code?\n\nSystem.out.println(10 + 20 + \"30\" + 40);",
-    "answers": {
-      "a": "30 3040",
-      "b": "10203040",
-      "c": "303040",
-      "d": "Compiler error"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "Java evaluates 10 + 20 first, resulting in 30. It then concatenates '30' and 40, resulting in '303040'."
-  },
-  {
-    "question": "Which of the following keywords is used for exception handling in Java?",
-    "answers": {
-      "a": "throw",
-      "b": "catch",
-      "c": "try",
-      "d": "All of the above"
-    },
-    "correctAnswer": ["d"],
-    "explanation": "Java uses try, catch, and throw for exception handling, each serving a specific purpose."
-  },
-  {
-    "question": "Which package contains the Scanner class in Java?",
-    "answers": {
-      "a": "java.lang",
-      "b": "java.util",
-      "c": "java.io",
-      "d": "java.text"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The Scanner class is part of the java.util package, used for reading input from various sources."
-  },
-  {
-    "question": "What does the break statement do in Java?",
-    "answers": {
-      "a": "Exits a method",
-      "b": "Terminates a loop or switch statement",
-      "c": "Skips the current iteration of a loop",
-      "d": "Ends the program"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The 'break' statement in Java terminates the nearest loop or switch statement."
-  },
-  {
-    "question": "What will be the output of the following code?\n\nint x = 3;\nx *= x + 5;\nSystem.out.println(x);",
-    "answers": {
-      "a": "24",
-      "b": "15",
-      "c": "27",
-      "d": "18"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "The expression x *= x + 5 is equivalent to x = x * (x + 5), which is 3 * (3 + 5) = 3 * 8 = 24."
-  },
-  {
-    "question": "Which of the following correctly creates an instance of an array in Java?",
-    "answers": {
-      "a": "int arr[] = new int[5];",
-      "b": "int arr[] = int[5];",
-      "c": "int arr = new int[5];",
-      "d": "int arr() = new int[5];"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "In Java, arrays are created with the 'new' keyword, specifying the data type and size in square brackets, as in 'int arr[] = new int[5];'."
-  },
-  {
-    "question": "Which of these is used to find and fix bugs in Java programs?",
-    "answers": {
-      "a": "JVM",
-      "b": "JRE",
-      "c": "JDK",
-      "d": "JDB"
-    },
-    "correctAnswer": ["d"],
-    "explanation": "JDB (Java Debugger) is a tool used for finding and fixing bugs in Java applications."
-  },
-  {
-    "question": "Which of the following statements correctly declares a variable in Java?",
-    "answers": {
-      "a": "int num = 10;",
-      "b": "integer num = 10;",
-      "c": "int num = '10';",
-      "d": "num int = 10;"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "'int num = 10;' is the correct syntax to declare an integer variable in Java."
-  },
-  {
-    "question": "What is the output of the following code?\n\nint a = 10;\na = a++ + ++a;\nSystem.out.println(a);",
-    "answers": {
-      "a": "22",
-      "b": "21",
-      "c": "20",
-      "d": "11"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The expression 'a = a++ + ++a' results in a complex evaluation where 'a' ends up as 21 due to the order of increment operations."
-  },
-  {
-    "question": "What is the return type of the hashCode() method in Java?",
-    "answers": {
-      "a": "void",
-      "b": "int",
-      "c": "Object",
-      "d": "long"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The hashCode() method in Java returns an integer (int) that represents the memory address of an object, though not directly."
-  },
-  {
-    "question": "What will be the output of the following code?\n\nString s = \"abc\";\ns.concat(\"def\");\nSystem.out.println(s);",
-    "answers": {
-      "a": "abcdef",
-      "b": "abc",
-      "c": "def",
-      "d": "Compile error"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "Strings are immutable in Java. The concat() method returns a new string but does not modify 's', so 's' remains 'abc'."
-  },
-  {
-    "question": "Which of the following is used to create an object in Java?",
-    "answers": {
-      "a": "class",
-      "b": "constructor",
-      "c": "new",
-      "d": "create"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "In Java, the 'new' keyword is used to create an instance of a class (an object)."
-  },
-  {
-    "question": "Which of the following will directly stop the execution of a program?",
-    "answers": {
-      "a": "return",
-      "b": "break",
-      "c": "System.exit(0);",
-      "d": "continue"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "System.exit(0); will terminate the program immediately, closing the JVM."
-  },
-  {
-    "question": "Which of these cannot be used for a switch statement parameter in Java?",
-    "answers": {
-      "a": "int",
-      "b": "String",
-      "c": "boolean",
-      "d": "char"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "A switch statement in Java does not accept a boolean as a parameter; it accepts int, char, byte, short, and String types."
-  },
-  {
-    "question": "Which of these methods is used to find the square root of a number in Java?",
-    "answers": {
-      "a": "Math.sqrt()",
-      "b": "Math.square()",
-      "c": "Math.pow()",
-      "d": "Math.root()"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "The Math.sqrt() method is used to find the square root of a number in Java."
-  },
-  {
-    "question": "Which of these access specifiers can be used for an interface?",
-    "answers": {
-      "a": "private",
-      "b": "protected",
-      "c": "public",
-      "d": "All of the above"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "Interfaces are typically declared as 'public' to be accessible by any class."
-  },
-  {
-    "question": "Which are Java keywords?",
-    "answers": {
-      "a": "final",
-      "b": "String",
-      "c": "public",
-      "d": "loop"
-    },
-    "correctAnswer": ["a", "c"],
-    "explanation": "'final' and 'public' are Java keywords; 'String' is a class, and 'loop' is not a keyword."
-  },
-  {
-    "question": "Which statement is correct about interfaces in Java?",
-    "answers": {
-      "a": "Interfaces can contain constructors.",
-      "b": "All methods in interfaces are implicitly public and abstract.",
-      "c": "A class can implement only one interface.",
-      "d": "Methods in interfaces can be private."
-    },
-    "correctAnswer": ["b"],
-    "explanation": "In Java, interfaces cannot contain constructors, and methods are implicitly public and abstract. A class can implement multiple interfaces, but interfaces cannot have private methods."
-  },
-  {
-    "question": "What is the result of the following code? int x = 3; int y = ++x * 5 / x-- + --x;",
-    "answers": {
-      "a": "y = 7",
-      "b": "y = 6",
-      "c": "y = 8",
-      "d": "y = 9"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "Due to the order of increments and decrements, the calculation follows a specific sequence: ++x makes x=4, then 4*5/4 + 2, resulting in y = 6."
-  },
-  {
-    "question": "Given the code fragment: \n\npublic class Student { \n public String name = \"\"; \n public int age = 0; \n public String major = \"Undeclared\"; \n public boolean fulltime = true; \n public void display() { \n  System.out.println(\"Name: \" + name + \" Major: \" + major); \n } \n public boolean isFullTime() { \n  return fulltime; \n }\n}\n\nWhich line of code initializes a student instance?",
-    "answers": {
-      "a": "Student student1;",
-      "b": "Student student1 = Student.new();",
-      "c": "Student student1 = new Student();",
-      "d": "Student student1 = Student();"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "In Java, the correct way to instantiate a new object is with 'new ClassName()'."
-  },
-  {
-    "question": "What should keyword1 and keyword2 be respectively, in order to produce output 2345?\n\nint [] array = {1,2,3,4,5};\nfor(int i: array) { \n if( i < 2) { \n  keyword1 ; \n }\n System.out.print(i);\n if( i == 3) { \n  keyword2 ; \n }\n}",
-    "answers": {
-      "a": "continue, break",
-      "b": "break, break",
-      "c": "break, continue",
-      "d": "continue, continue"
-    },
-    "correctAnswer": ["d"],
-    "explanation": "The 'continue' skips the current iteration, and the second 'continue' allows printing '2345'."
-  },
-  {
-    "question": "What is the result?\n\nGiven the code fragment:\n\npublic static void main(String[] args) {\n List <String> names = new ArrayList<>();\n names.add(\"Robb\");\n names.add(\"Bran\");\n names.add(\"Rick\");\n names.add(\"Bran\");\n if(names.remove(\"Bran\")) {\n names.remove(\"Jon\");\n }\n System.out.println(names);\n}\n\n",
-    "answers": {
-      "a": "[Robb, Rick, Bran]",
-      "b": "[Robb, Rick]",
-      "c": "[Robb, Bran, Rick, Bran]",
-      "d": "An exception is thrown at runtime."
-    },
-    "correctAnswer": ["a"],
-    "explanation": "After removing the first occurrence of 'Bran', the list is [Robb, Rick, Bran]."
-  },
-  {
-    "question": "Which code fragment, when inserted at line 3, enables the code to print 10:20?\n\nGiven:\n\npublic class Test {\n public static void main(String[] args) {\n /* insert code here */\n array[0]=10;\n array[1]=20;\n System.out.print(array[0] +\" : \"+array[1]);\n }\n}\n",
-    "answers": {
-      "a": "int[] array = new int[1];",
-      "b": "int[] array;\narray = new int[2];",
-      "c": "int array = new int[2];",
-      "d": "int array [2];"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "Option B initializes 'array' with two elements, allowing the values to be stored."
-  },
-  {
-    "question": "Which of the following exception will be thrown due to the statement given here?\n\nint array[] = new int[-2];\n",
-    "answers": {
-      "a": "NullPointerException",
-      "b": "NegativeArraySizeException",
-      "c": "ArrayIndexOutOfBoundsException",
-      "d": "IndexOutOfBoundsException",
-      "e": "This statement does not cause any exception."
-    },
-    "correctAnswer": ["b"],
-    "explanation": "Creating an array with a negative size throws NegativeArraySizeException."
-  },
-  {
-    "question": "Which code fragments, inserted independently, enable the code to compile? (Choose 3)\n\nGiven:\n\nclass Test2 {\n int fvar;\n static int cvar;\n public static void main(String [] args ) {\n Test2 = new Test2();\n // insert code here to write field variables\n }\n}\n",
-    "answers": {
-      "a": "t.fvar = 200;",
-      "b": "cvar = 400;",
-      "c": "fvar = 200;\ncvar = 400;",
-      "d": "this.fvar = 200;\nthis.cvar = 400;",
-      "e": "t.fvar = 200;\nTest2.cvar = 400;",
-      "f": "this.fvar = 200;\nTest2.cvar = 400;"
-    },
-    "correctAnswer": ["a", "b", "e"],
-    "explanation": "Options A, B, and E use valid syntax for accessing static and instance variables."
-  },
-  {
-    "question": "Given the code fragment:\n\nfor(int ii = 0; ii < 3;ii++) {\n int count = 0;\n for(int jj = 3; jj > 0; jj) {\n if(ii == jj) {\n ++count;\n break;\n }\n }\n System.out.print(count);\n continue;\n}\n",
-    "answers": {
-      "a": "011",
-      "b": "012",
-      "c": "123",
-      "d": "000"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "The nested loop increments 'count' when ii == jj, producing the output '011'."
-  },
-  {
-    "question": "Given the code fragment:\n\npublic static void main(String[] args) {\n int a[] = {1, 2, 3, 4, 5};\n for(XXX) {\n System.out.print(a[e]);\n }\n}\n\nWhich option can replace XXX to enable the code to print 135?",
-    "answers": {
-      "a": "int e = 0; e <= 4; e++",
-      "b": "int e = 0; e < 5; e += 2",
-      "c": "int e = 1; e <= 5; e += 1",
-      "d": "int e = 1; e < 5; e += 2"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "This loop prints the array elements with index 0, 2, and 4, which are 1, 3, and 5."
-  },
-  {
-    "question": "Given the code fragment:\n\npublic static void main(String[] args) {\n ArrayList myList = new ArrayList();\n String[] myArray;\n try {\n while(true) {\n myList.add(\"My String\");\n }\n } catch(RuntimeException re) {\n System.out.println(\"Caught a RuntimeException\");\n } catch(Exception e) {\n System.out.println(\"Caught an Exception\");\n }\n System.out.println(\"Ready to use\");\n}\n\nWhat is the result?",
-    "answers": {
-      "a": "Execution terminates in the first catch statement, and 'Caught a RuntimeException' is printed to the console.",
-      "b": "Execution terminates in the second catch statement, and 'Caught an Exception' is printed to the console.",
-      "c": "A runtime error is thrown in the thread 'main'.",
-      "d": "Execution completes normally, and 'Ready to use' is printed to the console.",
-      "e": "The code fails to compile because a throws keyword is required."
-    },
-    "correctAnswer": ["c"],
-    "explanation": "The while loop is an infinite loop, leading to an OutOfMemoryError, which cannot be caught by Exception or RuntimeException."
-  },
-  {
-    "question": "Given the code fragment:\n\npublic static void main(String[] args) {\n int ii = 0;\n int jj = 7;\n for(ii = 0; ii < jj - 1; ii = ii + 2) {\n System.out.print(ii + \" \");\n }\n}\n\nWhat is the result?",
-    "answers": {
-      "a": "2 4",
-      "b": "0 2 4 6",
-      "c": "0 2 4",
-      "d": "Compilation fails"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "The loop increments by 2 each time, stopping before jj-1, resulting in 0 2 4."
+    "explanation": "The import statement imports all classes in the java.io package, but not subpackages."
   },
 
   {
-    "question": "Given the following array:\n\nint [] intArr = {8, 16, 32, 64, 128};\n\nWhich two code fragments, independently, print each element in this array?",
-    "options": {
-      "a": "for(int i : intArr) { System.out.print(intArr[i] + ' '); }",
-      "b": "for(int i : intArr) { System.out.print(i + ' '); }",
-      "c": "for(int i=0 : intArr) { System.out.print(intArr[i] + ' '); i++; }",
-      "d": "for(int i=0; i < intArr.length; i++) { System.out.print(i + ' '); }",
-      "e": "for(int i=0 ; i < intArr.length; i++) { System.out.print(intArr[i] + ' '); }",
-      "f": "for(int i: i < intArr.length; i++) { System.out.print(intArr[i] + ' '); }"
+    "question": "Given:\n\npublic class TestFinal {\n    final int l = 5;\n    static void modify(TestFinal test) {\n        test.l = 99;\n    }\n\n    public static void main(String[] args) {\n        final TestFinal tf = new TestFinal();\n        modify(tf);\n        System.out.println(tf.l);\n    }\n}\n\nWhat is the result?",
+    "answers": {
+      "a": "A compilation error occurs in the modify method.",
+      "b": "99",
+      "c": "5",
+      "d": "A compilation error occurs in the main method."
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The variable 'l' is declared final and cannot be modified in the modify method."
+  },
+  {
+    "question": "Given the code fragment:\n\npublic static void main(String[] args) {\n    String name = \"Rita\";\n    int age = 14;\n    /* line n1 */\n}\n\nWhich code fragment, when inserted at line n1, enables it to print 'Rita is 14 years old'?",
+    "answers": {
+      "a": "System.out.println(\"%s is %d years old\" + name + age);",
+      "b": "System.out.println(\"%s is %n years old\" name, age);",
+      "c": "System.out.printf(\"%s is %d years old\", name, age);",
+      "d": "System.out.printf(\"%s is %n years old\", name, age);"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "Only printf supports format strings, so options A and B are incorrect. Option D has '%n' which causes a line break."
+  },
+  {
+    "question": "Given:\n\npublic class App {\n    public static void main(String[] args) {\n        System.out.println(\"Hello Java!\");\n    }\n}\n\nWhich statement is true about the main method?",
+    "answers": {
+      "a": "It can be a non-static method.",
+      "b": "Its parameter can be of type Integer[].",
+      "c": "It cannot be defined in a non-public class.",
+      "d": "It cannot be invoked by its name."
+    },
+    "correctAnswer": ["d"],
+    "explanation": "The main method cannot be invoked by name directly; it requires the JVM to start execution."
+  },
+  {
+    "question": "Given the code fragment:\n\nString a = \"Java\";\nString b = new String(\"Java\");\nSystem.out.println(a.equals(b));\nSystem.out.println(a == b);\n\nWhat is the result?",
+    "answers": {
+      "a": "false false",
+      "b": "true true",
+      "c": "true false",
+      "d": "false true"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "'a' references a string literal in the pool, while 'b' references a new object. Although they contain the same content, they reference different objects."
+  },
+  {
+    "question": "Given the code fragment:\n\nint[] arr = {1, 2, 3, 4, 5};\n\nWhich for loop statement can be used to print 135?",
+    "answers": {
+      "a": "for(int idx = 1; idx < arr.length; idx+=2) { System.out.print(arr[idx]); }",
+      "b": "for(int idx = 1; idx < arr.length - 1; idx++) { System.out.print(arr[idx++]); }",
+      "c": "for(int idx = 0; idx < arr.length; idx++) { System.out.print(arr[idx]); }",
+      "d": "for(int idx = 0; idx < arr.length; idx+=2) { System.out.print(arr[idx]); }"
+    },
+    "correctAnswer": ["d"],
+    "explanation": "Options A and B start from index 1, so the first element (1) will not be printed. Option C prints all elements, while D correctly prints 135."
+  },
+  {
+    "question": "Given the code fragment:\n\n5. float fValue = 120;\n6. int iValue = fValue;\n7. double dValue = fValue;\n8. long lValue = fValue;\n\nAt which line does a compilation error occur?",
+    "answers": {
+      "a": "lines 5 and 7",
+      "b": "line 7",
+      "c": "lines 6 and 8",
+      "d": "line 5"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "Implicit conversion from float to int or long is not allowed."
+  },
+  {
+    "question": "Given the contents of Student.java:\n\nclass Course {\n    String courseName;\n}\n\npublic class Student {\n    String stuName;\n\n    public static void main(String[] args) {\n        Student s = new Student();\n        s.stuName = args[0];\n        Course c = new Course();\n        c.courseName = args[1];\n        System.out.println(s.stuName + \" is studying \" + c.courseName);\n    }\n}\n\nWhich statement is true?",
+    "answers": {
+      "a": "The commands:\njavac Student.java\njava Student Richard William Java\nthrow an error about a missing Course.class file.",
+      "b": "The commands:\njavac Course.java\njavac Student.java\njava Course\njava Student “Richard William” Java\nprint: Richard William is studying Java.",
+      "c": "The commands:\njavac Student.java\njava Student Richard William Java\nprint: Richard William is studying Java.",
+      "d": "The commands:\njavac Student.java\njava Student “Richard William” Java\nprint: Richard William is studying Java."
+    },
+    "correctAnswer": ["d"],
+    "explanation": "Compiling Student.java also compiles Course, as they are in the same file. Option D is correct."
+  },
+  {
+    "question": "Which method identifier is correct according to Java naming conventions?",
+    "answers": {
+      "a": "BillCalculator",
+      "b": "calculateBill",
+      "c": "calculatebill",
+      "d": "Calculator"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "Java naming conventions use lower camel case for method identifiers, starting with a lowercase letter."
+  },
+  {
+    "question": "Given the code:\n\nint num = 100;\nint count = 0;\ndo {\n    num--;\n    count++;\n} while (count > 1);\nSystem.out.println(\"num = \" + num);\n\nWhat is the result?",
+    "answers": {
+      "a": "The program executes indefinitely.",
+      "b": "num = 100",
+      "c": "num = 99",
+      "d": "num = 0"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "'count' is incremented to 1 and 'num' is decremented to 99. The loop exits as 'count' is no longer greater than 1."
+  },
+  {
+    "question": "Given the code fragment:\n\nString inputFromConsole = \" betaTEST\";\nString cleanedInput;\ncleanedInput = inputFromConsole.toUpperCase();\ncleanedInput = cleanedInput.trim();\nSystem.out.println(\"[\" + cleanedInput + \"]\");\n\nWhat is the result?",
+    "answers": {
+      "a": "[ BETATEST ]",
+      "b": "[betaTest]",
+      "c": "[ betaTest ]",
+      "d": "[BETATEST]"
+    },
+    "correctAnswer": ["d"],
+    "explanation": "The string is converted to uppercase, and trim() removes leading and trailing whitespaces."
+  },
+  {
+    "question": "Given the code fragment:\n\nint value = 10;\nint a = ++value;\nint b = value;\nint c = value++;\nif (a <= b && a <= c) {\n    if (b <= c) {\n        a = ++b;\n    } else {\n        a = ++c;\n    }\n}\nSystem.out.println(a);\n\nWhat is the result?",
+    "answers": {
+      "a": "10",
+      "b": "11",
+      "c": "12",
+      "d": "13"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "The complex increment and decrement operations result in 'a' equaling 12."
+  },
+  {
+    "question": "Given the code fragment:\n\nSystem.out.println(10 == 10 && !(5 != 5));\nSystem.out.println(10 < 8 || 10 > 2);\n\nWhat is the result?",
+    "answers": {
+      "a": "true\ntrue",
+      "b": "true\nfalse",
+      "c": "false\nfalse",
+      "d": "false\ntrue"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "Both expressions evaluate to true."
+  },
+  {
+    "question": "Which statement is true about exception handling?",
+    "answers": {
+      "a": "At least one catch block must accompany a try statement.",
+      "b": "All statements in a try block are executed, even if an exception occurs in the middle of the try block.",
+      "c": "At least one statement in a try block must throw an exception.",
+      "d": "All catch blocks must be ordered from most specific to most general."
+    },
+    "correctAnswer": ["d"],
+    "explanation": "Catch blocks must be ordered from most specific to most general; otherwise, unreachable code causes a compilation error."
+  },
+  {
+    "question": "Given the code fragment:\n\nint[] num = new int[2];\nnum[0] = 10;\nnum[1] = 15;\nList<Integer> lst = new ArrayList<>();\nlst.add(10);\nlst.add(15);\nnum[1] = 20;\nlst.add(20);\n\nfor(int x : num) { System.out.print(x + \" \"); }\nSystem.out.println(\"\");\nfor (int y : lst) { System.out.print(y + \" \"); }\n\nWhat is the result?",
+    "answers": {
+      "a": "10 20\n10 15 20",
+      "b": "A runtime exception is thrown.",
+      "c": "10 20\n10 20",
+      "d": "A compilation error occurs."
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The array 'num' is modified to contain 10 and 20, while the list 'lst' contains 10, 15, and 20."
+  },
+  {
+    "question": "Given the code fragment:\n\nString digits = \"0123456789\";\nSystem.out.println(digits.substring(digits.indexOf(\"4\"), digits.indexOf(\"8\")).concat(\"89\"));\n\nWhat is the result?",
+    "answers": {
+      "a": "456789",
+      "b": "4567889",
+      "c": "45678",
+      "d": "3456789"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The substring method returns '4567' and '89' is concatenated, resulting in '456789'."
+  },
+  {
+    "question": "Given the classes:\n\nApple.java:\n\npackage fruits;\npublic class Apple {\n    public void getApple() {}\n}\n\nSalad.java:\n\npackage food;\n// line n1\npublic class Salad {\n    Apple apple = new Apple(); // line n2\n    public void prepareSalad() {\n        apple.getApple();\n    }\n}\n\nWhich two modifications, independently, enable the Salad.java file to compile?",
+    "answers": {
+      "a": "Replace line n1 with import fruits.Apple.getApple();",
+      "b": "Replace line n1 with import fruits.Apple;",
+      "c": "Replace line n1 with import fruits;",
+      "d": "Replace line n2 with fruits.Apple apple = new Apple();",
+      "e": "Replace line n2 with fruits.Apple apple = new fruits.Apple();"
     },
     "correctAnswer": ["b", "e"],
-    "explanation": "Option B uses the enhanced for loop, which iterates through each element directly, and Option E uses the standard for loop to access each element by index."
+    "explanation": "Imports must include the package and class, or a fully qualified name should be used."
   },
   {
-    "question": "Given the code fragment:\n\nint[] array = {1, 2, 3, 4, 5};\n\nAnd given the requirements:\n1. Process all the elements of the array in the order of entry.\n2. Process all the elements of the array in the reverse order of entry.\n3. Process alternating elements of the array in the order of entry.\n\nWhich two statements are true?",
-    "options": {
-      "A": "Requirements 1, 2, and 3 can be implemented by using the enhanced for loop.",
-      "B": "Requirements 1, 2, and 3 can be implemented by using the standard for loop.",
-      "C": "Requirements 2 and 3 CANNOT be implemented by using the standard for loop.",
-      "D": "Requirement 1 can be implemented by using the enhanced for loop.",
-      "E": "Requirement 3 CANNOT be implemented by using either the enhanced for loop or the standard for loop."
-    },
-    "correctAnswer": ["B", "D"],
-    "explanation": "The standard for loop provides flexibility to process elements in any order, making it suitable for Requirements 1, 2, and 3. The enhanced for loop, however, can only fulfill Requirement 1."
-  },
-  {
-    "question": "Given:\n\npublic class TestScope { public static void main(String[] args) { int var1 = 200; System.out.print(doCalc(var1)); System.out.print(' ' + var1); } static int doCalc(int var1) { var1 = var1 * 2; return var1; } }\n\nWhat is the result?",
-    "options": {
-      "a": "400 200",
-      "b": "200 200",
-      "c": "400 400",
-      "d": "Compilation fails."
+    "question": "Given:\n\npublic static void main(String[] args) {\n    boolean value1 = 10 + 5 >= 2 + 13;\n    int value2 = 0;\n    if (value1 == true) {\n        value2 = 5 * 3 + 10 / 2;\n    } else {\n        value2 = 5 / 3 + 10 * 2;\n    }\n    System.out.println(value2);\n}\n\nWhat is the result?",
+    "answers": {
+      "a": "20",
+      "b": "32",
+      "c": "A compilation error occurs.",
+      "d": "21"
     },
     "correctAnswer": ["a"],
-    "explanation": "The method doCalc modifies its local copy of var1 but does not affect the original var1 in main. Therefore, it prints '400' from doCalc and '200' from main."
+    "explanation": "The boolean condition evaluates to true, resulting in the calculation of 5 * 3 + 10 / 2 = 20."
   },
   {
-    "question": "Given:\n\npublic class MarkList { int num; public static void graceMarks(MarkList obj4) { obj4.num += 10; } public static void main(String[] args) { MarkList obj1 = new MarkList(); MarkList obj2 = obj1; MarkList obj3 = null; obj2.num = 60; graceMarks(obj2); } }\n\nHow many MarkList instances are created in memory at runtime?",
-    "options": {
-      "a": "1",
-      "b": "2",
-      "c": "3",
-      "d": "4"
+    "question": "Given:\n\n1. class Test {\n2. /* comment text 1 */\n3. // comment text 2 //\n4. // comment text 3\n5. and comment text 4\n6. /* comment text 5\n7. and comment text 6 */\n8. }\n\nAt which line does a compilation error occur?",
+    "answers": {
+      "a": "line 5",
+      "b": "line 2",
+      "c": "line 3",
+      "d": "line 7"
     },
     "correctAnswer": ["a"],
-    "explanation": "Only one instance of MarkList is created and assigned to obj1. obj2 refers to the same instance, and obj3 is null."
+    "explanation": "Line 5 causes a compilation error because it is treated as code, not a comment."
   },
-
   {
-    "question": "Which two statements are true about the hashCode method?",
+    "question": "Given:\n\nclass Bus {\n    String type = \"default\";\n    // line n1\n    Bus (String type) {\n        // line n2\n        this.type = type;\n    }\n}\n\npublic class App {\n    public static void main(String[] args) {\n        Bus b1 = new Bus();\n        System.out.println(b1.type);\n        Bus b2 = new Bus(\"luxury\");\n        System.out.println(b2.type);\n    }\n}\n\nWhat is the result?",
     "answers": {
-      "a": "The hashCode method can take multiple arguments.",
-      "b": "The hashCode method is used to improve the performance of hash tables.",
-      "c": "The hashCode method must always return a unique integer for each object.",
-      "d": "If two objects are equal according to the equals(Object) method, then calling the hashCode method on each of the two objects must produce the same integer result.",
-      "e": "The hashCode method is defined in the java.lang.Object class."
+      "a": "The code fails to compile. To make it compile, at line n1 insert:this(){ }",
+      "b": "The code fails to compile. To make it compile, at line n2 insert:this();",
+      "c": "The code fails to compile. To make it compile, at line n1 insert:Bus(){ }",
+      "d": "The code compiles and prints:default luxury"
     },
-    "correctAnswer": ["d", "e"],
-    "explanation": "In Java, if two objects are equal according to the equals() method, they must have the same hash code. The hashCode method is defined in java.lang.Object and helps in managing objects in hash tables."
+    "correctAnswer": ["c"],
+    "explanation": "A default constructor is missing, causing a compilation error."
   },
   {
-    "question": "What is the result of compiling and running the following code?\n\npublic class Test {\n  public static void main(String[] args) {\n    int[] numbers = {1, 2, 3, 4, 5};\n    for (int i : numbers) {\n      System.out.print(i + \" \");\n      if (i == 3) {\n        break;\n      }\n    }\n  }\n}",
+    "question": "Given:\n\npublic class Course {\n    public static void main(String[] args) {\n        double courseFee = 1000.0;\n        float percentage = 5.0f;\n        // line n1\n        newFee = courseFee * percentage;\n        System.out.println(newFee);\n    }\n}\n\nWhich statement, when inserted at line n1, enables the Course class to compile?",
     "answers": {
-      "a": "1 2 3 4 5",
-      "b": "1 2 3",
-      "c": "Compilation fails.",
-      "d": "An exception is thrown at runtime."
+      "a": "int newFee;",
+      "b": "double newFee;",
+      "c": "long newFee;",
+      "d": "float newFee;"
     },
     "correctAnswer": ["b"],
-    "explanation": "The loop prints numbers until it encounters the value 3, where the 'break' statement stops further iteration."
+    "explanation": "newFee must be declared as double to match courseFee and avoid data loss."
   },
   {
-    "question": "What is the effect of the following code fragment?\n\nStringBuilder sb = new StringBuilder(\"Hello World\");\nsb.delete(0, sb.length());\nsb.append(\"Goodbye\");",
+    "question": "Given these class definitions:\n\nclass MyClassA {}\npublic class MyClassB {}\nclass MyClassC extends Object {}\nclass MyClassD {\n    public static void main(String[] args) { }\n}\n\nWhich class or classes compile?",
     "answers": {
-      "a": "The code will not compile.",
-      "b": "sb will contain \"Hello World\".",
-      "c": "sb will contain \"Goodbye\".",
-      "d": "sb will contain an empty string."
+      "a": "only MyClassB, MyClassC, and MyClassD",
+      "b": "only MyClassB",
+      "c": "MyClassA, MyClassB, MyClassC, and MyClassD",
+      "d": "only MyClassB and MyClassD"
     },
     "correctAnswer": ["c"],
-    "explanation": "The delete() method clears the content, and then append() adds 'Goodbye' to sb."
+    "explanation": "All classes compile successfully."
   },
   {
-    "question": "Given the following code:\n\nint x = 5;\nint y = 10;\nint z = 15;\nSystem.out.println((x > y) ? (y > z) ? \"X\" : \"Y\" : \"Z\");\n\nWhat is the result?",
+    "question": "Which statement is valid?",
     "answers": {
-      "a": "X",
-      "b": "Y",
-      "c": "Z",
-      "d": "Compilation fails."
+      "a": "int 2 totalScore = 0;",
+      "b": "int total–score = 0;",
+      "c": "int totalScore2 = 0;",
+      "d": "int total score = 0;"
     },
     "correctAnswer": ["c"],
-    "explanation": "The ternary operator evaluates conditions. Here, x > y is false, so 'Z' is printed."
+    "explanation": "Identifiers cannot contain whitespaces and must start with a letter or underscore. Hyphens are also not allowed in identifiers."
   },
   {
-    "question": "Which two statements are true about the switch statement?",
+    "question": "Identify two class variables.",
     "answers": {
-      "a": "It must contain a default label.",
-      "b": "The break statement, at the end of each case block, is optional.",
-      "c": "Its case label literals can be changed at runtime.",
-      "d": "It accepts String objects as a valid expression in case labels.",
-      "e": "It must contain at least one case label."
+      "a": "private static int numberOfSquares = 20;",
+      "b": "public static int counter = 0;",
+      "c": "private Measure cm;",
+      "d": "public int size = 10;",
+      "e": "int scale = 35;"
+    },
+    "correctAnswer": ["a", "b"],
+    "explanation": "Class variables are declared with the static keyword."
+  },
+  {
+    "question": "Given the code fragment:\n\n1. String name = \"Fred\";\n2. System.out.println(\"Hello \" + // Saying hello\n3. name); // to Fred\n4. System.out.println(\"Good /* and \" +\n5. \" greeting */ day!\");\n6. System.out // A welcome message\n7. .println(\"Welcome \" + name);\n8. System.out.println(\"Goodbye /* Farewall + name\");\n\nWhich statement is true?",
+    "answers": {
+      "a": "A compilation error occurs at line 5.",
+      "b": "A compilation error occurs at line 3.",
+      "c": "The code compiles without errors.",
+      "d": "A compilation error occurs at line 7."
+    },
+    "correctAnswer": ["c"],
+    "explanation": "The code compiles successfully without errors."
+  },
+  {
+    "question": "Given the code fragment:\n\nString s1 = \"foo-bar\";\nString s2 = new String(\"foo-bar\");\nSystem.out.print(s1.equals(s2) + \" \");\nSystem.out.print(s1 == s2);\nSystem.out.print(\" \" + s1.compareTo(s2));\n\nWhat is the result?",
+    "answers": {
+      "a": "false false -1",
+      "b": "true false 0",
+      "c": "true true 0",
+      "d": "false true -1"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "'s1' and 's2' reference different memory locations with the same content. equals() returns true, == returns false, and compareTo() returns 0 when equals() returns true."
+  },
+  {
+    "question": "Identify two valid data types for the operands of the addition (+) operator?",
+    "answers": {
+      "a": "String",
+      "b": "boolean",
+      "c": "numeric",
+      "d": "array"
+    },
+    "correctAnswer": ["a", "c"],
+    "explanation": "The + operator can be used as a concatenation operator for strings and as an arithmetic operator for numbers."
+  },
+  {
+    "question": "Given the code fragment:\n\nint a = 10;\nint b = 20;\nint c = 30;\nSystem.out.println(a++ > 10 || ++b <= 21);\nSystem.out.println(a > 10 && ++b <= 22);\nSystem.out.println(a <= 11 && b == 22);\nSystem.out.println(c++ == 31 && a++ == 1 || b++ == 22);\n\nWhat is the result?",
+    "answers": {
+      "a": "false\nfalse\nfalse\nfalse",
+      "b": "true\nfalse\nfalse\nfalse",
+      "c": "true\ntrue\ntrue\ntrue",
+      "d": "true\ntrue\ntrue\nfalse"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "All expressions evaluate to true based on the incremented and decremented values of 'a', 'b', and 'c'."
+  },
+  {
+    "question": "Which statement is true about a mutator method?",
+    "answers": {
+      "a": "It replaces the default constructor.",
+      "b": "It returns mutated instance members.",
+      "c": "It must be declared private.",
+      "d": "It can be used to assign data to instance members."
+    },
+    "correctAnswer": ["d"],
+    "explanation": "A mutator method is a setter method that assigns data to instance members."
+  },
+  {
+    "question": "Given the code fragment:\n\n// line n1\nswitch (var) {\n    case \"1\":\n        System.out.println(\"one\");\n        break;\n}\n\nWhich code fragment, when inserted at line n1, enables the code to print 'one'?",
+    "answers": {
+      "a": "char var = '1';",
+      "b": "String var = \"1\";",
+      "c": "int var = 1;",
+      "d": "String var = 1;"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "Using String var = \"1\"; allows the switch statement to match the case '1' and print 'one'."
+  },
+  {
+    "question": "You have a microprocessor board, such as Raspberry PI, wired to control a drone. Which edition of Java is geared towards use of simple, closed systems with constrained memory requirements, such as a microprocessor board?",
+    "answers": {
+      "a": "Java Micro Edition",
+      "b": "Java Standard Edition with a Compact Profile",
+      "c": "Java Enterprise Edition",
+      "d": "Java SE Embedded"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "Java Micro Edition is designed for simple, closed systems with limited memory."
+  },
+  {
+    "question": "Given the code:\n\npublic class Calc {\n    // line n1\n    return a + b;\n}\n\npublic static void main(String[] args) {\n    Calc obj = new Calc();\n    int c = obj.sum(10, 20);\n    System.out.println(\"sum is \" + c);\n}\n\nWhich code fragment, when inserted at line n1, enables the code to print: sum is 30?",
+    "answers": {
+      "a": "int sum(int a, b) {",
+      "b": "int sum(int a, int b) {",
+      "c": "int sum(int, int) {",
+      "d": "int sum(int[] a, b) {"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "In parameter lists, each parameter must have a data type and an identifier, making only option B correct."
+  },
+  {
+    "question": "Given:\n\nclass Product {\n    String color = null;\n    Product(Product p) {\n        this.color = p.color;\n    }\n}\n\nAnd the code fragment:\n\nProduct p1 = new Product(); // line n1\np1.color = \"White\";\nProduct p2 = new Product(p1);\nSystem.out.println(p1.color + \" : \" + p2.color);\n\nWhat is the result?",
+    "answers": {
+      "a": "A compilation error occurs at line n1.",
+      "b": "White : null",
+      "c": "null : null",
+      "d": "White : White"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The class Product lacks a default constructor, causing a compilation error."
+  },
+  {
+    "question": "Given:\n\nclass Test {\n    static int var2 = 200;\n    public static void print() {\n        System.out.println(var2);\n    }\n\n    public void print(int var1) { // line n1\n        System.out.println(var1);\n        var2 = var2 + var1; // line n2\n        print();\n    }\n\n    public static void main(String[] args) {\n        Test obj = new Test();\n        obj.print(100);\n    }\n}\n\nWhat is the result?",
+    "answers": {
+      "a": "100\n200",
+      "b": "A compilation error occurs at line n2.",
+      "c": "A compilation error occurs at line n1.",
+      "d": "100\n300"
+    },
+    "correctAnswer": ["d"],
+    "explanation": "obj.print(100) calls the overloaded method, which outputs var1 (100) and updates var2 to 300."
+  },
+  {
+    "question": "Given the code fragment:\n\nString flavors[] = {\"Vanilla\", \"Chocolate\"};\nint choice = 2;\nswitch(choice) {\n    case 1:\n        System.out.println(\"Selected \" + flavors[1] + \" flavor.\");\n        break;\n    case 2:\n        System.out.println(\"Selected \" + flavors[2] + \" flavor.\");\n        break;\n    default:\n        System.out.println(\"Thank you!\");\n}\n\nWhat is the result?",
+    "answers": {
+      "a": "Selected null flavor.",
+      "b": "Selected Chocolate flavor.",
+      "c": "An ArrayIndexOutOfBoundsException is thrown at run time.",
+      "d": "Selected Chocolate flavor.\nThank you!"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "The array 'flavors' has two elements, so accessing index 2 causes an ArrayIndexOutOfBoundsException."
+  },
+  {
+    "question": "Given the code fragment:\n\nString[] codes = {\"CA\", \"JP\", \"US\", \"CA\", \"UK\"};\nint count = 0;\nfor (String c : codes) {\n    if (c.equals(\"CA\")) {\n        continue;\n    } else {\n        count++;\n    }\n}\nSystem.out.println(count);\n\nWhat is the result?",
+    "answers": {
+      "a": "3",
+      "b": "A compilation error occurs.",
+      "c": "2",
+      "d": "0"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The 'for' loop skips incrementing 'count' when 'c' equals 'CA'. Since 'CA' appears twice, 'count' is incremented three times."
+  },
+  {
+    "question": "Given the code fragment:\n\npublic static void main(String[] args) {\n    int[] arr = {10, 0};\n    int i = 0;\n    try {\n        int answer = arr[i] / arr[i + 1];\n    } catch (Exception e) {\n        System.out.println(\"Unknown issues.\");\n    } catch (ArithmeticException ae) {\n        System.out.println(\"Invalid divisor.\");\n    }\n}\n\nWhat is the result?",
+    "answers": {
+      "a": "Unknown issues.\nInvalid divisor.",
+      "b": "Unknown issues.",
+      "c": "Invalid divisor.",
+      "d": "A compilation error occurs."
+    },
+    "correctAnswer": ["d"],
+    "explanation": "Exception handling blocks must go from specific to general. Otherwise, specific exceptions become unreachable, causing a compilation error."
+  },
+  {
+    "question": "Given the code fragment:\n\nString s = \"Hello Java\";\nSystem.out.println(s.length());\ns.concat(\"SE 8\");\nSystem.out.println(s.length());\n\nWhat is the result?",
+    "answers": {
+      "a": "9\n12",
+      "b": "10\n10",
+      "c": "9\n9",
+      "d": "10\n14"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The result of s.concat(\"SE 8\") is not assigned, so 's' remains unchanged, with both outputs showing length 10."
+  },
+  {
+    "question": "Given the code fragment:\n\n// line n1\nnum = new int[10];\n\nWhich code fragment can be inserted at line n1 to enable the code to compile?",
+    "answers": {
+      "a": "new int num[];",
+      "b": "int[] num;",
+      "c": "int[10] num;",
+      "d": "int num[10];"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The correct way to declare an array is to use 'int[] num;'."
+  },
+  {
+    "question": "Given the code fragment:\n\nList<String> names = new ArrayList<>();\nnames.add(\"Julia\");\nnames.add(\"Peter\");\nfor (Iterator<String> itr = names.iterator(); itr.hasNext();) {\n    System.out.println(itr.next());\n}\n\nWhat is the result?",
+    "answers": {
+      "a": "A compilation error occurs.",
+      "b": "A runtime exception is thrown.",
+      "c": "Julia\nPeter",
+      "d": "Peter\nJulia"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "The iterator goes through each element in order, printing 'Julia' and then 'Peter'."
+  },
+  {
+    "question": "Given:\n\npublic class App {\n    int num;\n\n    public int add(int x) {\n        num = num + x;\n        return num;\n    }\n\n    public void add(int x) {\n        num = num + x;\n    }\n\n    public static void main(String[] args) {\n        App obj = new App();\n        obj.add(100);\n        int ans = obj.add(100);\n        System.out.println(obj.num);\n    }\n}\n\nWhat is the result?",
+    "answers": {
+      "a": "300",
+      "b": "100",
+      "c": "200",
+      "d": "A compilation error occurs."
+    },
+    "correctAnswer": ["d"],
+    "explanation": "The method add(int x) is not overloaded correctly, as only the return type is different, causing a compilation error."
+  },
+  {
+    "question": "Identify two features of Java.",
+    "answers": {
+      "a": "architecture dependent",
+      "b": "platform independent",
+      "c": "single threaded",
+      "d": "robust"
     },
     "correctAnswer": ["b", "d"],
-    "explanation": "The break statement is optional in each case block, and starting from Java 7, switch statements can use Strings."
+    "explanation": "Java is platform-independent and robust."
   },
   {
-    "question": "Which of the following statements about the 'finally' block is true?",
+    "question": "Which two statements are true about the Java Runtime Environment (JRE)?",
     "answers": {
-      "a": "The finally block is executed only when an exception is thrown.",
-      "b": "The finally block is executed only if no exception is thrown.",
-      "c": "The finally block is always executed, regardless of whether an exception is thrown or not.",
-      "d": "The finally block is optional and does not always need to be used."
+      "a": "It is responsible for garbage collection.",
+      "b": "It interprets bytecode stored in a .class file.",
+      "c": "It contains the JDK and Java APIs.",
+      "d": "It is platform independent.",
+      "e": "You must install the JRE to compile a .java file."
     },
-    "correctAnswer": ["c"],
-    "explanation": "The finally block is always executed, regardless of whether an exception is thrown or not."
+    "correctAnswer": ["a", "b"],
+    "explanation": "The JRE manages garbage collection and interprets bytecode."
   },
   {
-    "question": "Given:\n\nString str1 = \"abc\";\nString str2 = \"abc\";\nSystem.out.println(str1 == str2);\nSystem.out.println(str1.equals(str2));\n\nWhat is the result?",
+    "question": "Given the code fragment:\n\nclass Ball {\n    double weight;\n}\n\npublic class App {\n    public static void main(String[] args) {\n        // line n1\n        System.out.println(b.weight);\n    }\n}\n\nWhich code fragment can be inserted at line n1 to enable the code to print 0.0?",
     "answers": {
-      "a": "true followed by false",
-      "b": "false followed by true",
-      "c": "true followed by true",
-      "d": "false followed by false"
+      "a": "Ball b = null; b.weight = 0.0;",
+      "b": "Ball.weight = 0.0;",
+      "c": "Ball b = new Ball(0.0);",
+      "d": "Ball b = new Ball();"
     },
-    "correctAnswer": ["c"],
-    "explanation": "Since both str1 and str2 are string literals with the same content, both == and equals() return true."
+    "correctAnswer": ["d"],
+    "explanation": "The Ball class has only the default constructor. Initializing b as a new instance allows printing 0.0."
   },
-
   {
-    "question": "Which collection class allows you to access its elements by their unique keys?",
+    "question": "Which two Java reserved words are used to implement encapsulation?",
     "answers": {
-      "a": "java.util.Map",
-      "b": "java.util.List",
-      "c": "java.util.Set",
-      "d": "java.util.Collection"
+      "a": "final",
+      "b": "static",
+      "c": "public",
+      "d": "extends",
+      "e": "private"
+    },
+    "correctAnswer": ["c", "e"],
+    "explanation": "'public' and 'private' keywords are used to control access to class members, implementing encapsulation."
+  },
+  {
+    "question": "Given:\n\npublic class Student {\n    String sName;\n    char grade;\n    public static void main(String[] args) {\n        Student s = new Student();\n        System.out.println(\"[\" + s.sName + \":\" + s.grade + \"]\");\n    }\n}\n\nWhat is the result?",
+    "answers": {
+      "a": "[null: ]",
+      "b": "[ : ]",
+      "c": "[null:null]",
+      "d": "[:null]"
     },
     "correctAnswer": ["a"],
-    "explanation": "The java.util.Map collection allows access to its elements by unique keys."
+    "explanation": "Reference variables are initialized to null, while char variables default to a non-displayable null character."
   },
   {
-    "question": "What is the output of the following code?\n\nString str = \"java\";\nSystem.out.println(str.substring(1, 3));",
+    "question": "Given the code fragment:\n\nclass Course {\n    String name;\n    static int count = 0;\n    Course(String name) {\n        this.name = name;\n        count++;\n    }\n}\n\npublic class App {\n    public static void main(String[] args) {\n        Course c = new Course(\"Java Programming\");\n        // line n1\n    }\n}\n\nWhich code fragment, when inserted at line n1, enables the code to print 'Java Programming:1'?",
     "answers": {
-      "a": "ja",
-      "b": "av",
-      "c": "va",
-      "d": "Error at runtime"
+      "a": "System.out.println(name + \":\" + count);",
+      "b": "System.out.println(c.name + \":\" + count);",
+      "c": "System.out.println(c.name + \":\" + Course.count);",
+      "d": "System.out.println(Course.name + \":\" + c.count);"
     },
-    "correctAnswer": ["b"],
-    "explanation": "The substring(1, 3) method extracts characters from index 1 to 3, resulting in 'av'."
+    "correctAnswer": ["c"],
+    "explanation": "'name' is non-static, so it must be accessed through an instance (c), while 'count' is static and accessed through the class."
   },
   {
-    "question": "Which of the following statements is true about constructors?",
+    "question": "Given the code fragment:\n\nList<String> items = new ArrayList<>();\nitems.add(1, \"pen\");\nitems.add(2, \"pencil\");\nitems.add(3, \"erasers\");\nitems.add(\"paper\");\nfor (String x : items) {\n    System.out.println(x + \" \");\n}\n\nWhat is the result?",
     "answers": {
-      "a": "Constructors can be final.",
-      "b": "Constructors can be synchronized.",
-      "c": "Constructors can be inherited.",
-      "d": "Constructors cannot be abstract."
+      "a": "pen pencil erasers paper",
+      "b": "paper pen pencil erasers",
+      "c": "A compilation error occurs.",
+      "d": "A runtime exception is thrown."
     },
     "correctAnswer": ["d"],
-    "explanation": "Constructors cannot be abstract in Java because they must be implemented by classes to initialize objects."
+    "explanation": "The index starts at 0, so adding items at index 1 is invalid until the array reaches that size."
   },
   {
-    "question": "What is the output of the following code?\n\nint x = 10;\nint y = 5;\nSystem.out.println(x + y + \"\" + x + y);",
+    "question": "Given the code fragment:\n\n// line n1\npublic class App {\n    public static void main(String[] args) {\n        List<Double> nums = new ArrayList<>();\n        nums.add(Math.PI);\n        nums.add(new Random().nextDouble());\n    }\n}\n\nWhich statement is true?",
     "answers": {
-      "a": "15",
-      "b": "10510",
-      "c": "10105",
-      "d": "Compilation error"
+      "a": "The code results in a compilation error. To make it compile, insert at line n1:\nimport java.lang.Math;\nimport java.lang.Random;",
+      "b": "The code compiles successfully",
+      "c": "The code results in a compilation error. To make it compile, insert at line n1:\nimport java.lang;\nimport java.util;",
+      "d": "The code results in a compilation error. To make it compile, insert at line n1:\nimport java.util.*;"
+    },
+    "correctAnswer": ["d"],
+    "explanation": "Math is in java.lang (imported by default), but Random must be imported from java.util."
+  },
+  {
+    "question": "You have been asked to develop a Java program that prints the elements of an array in reverse order. Which looping statement cannot be used to meet the requirement?",
+    "answers": {
+      "a": "enhanced for",
+      "b": "standard for",
+      "c": "while",
+      "d": "do-while"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The enhanced for loop only iterates forward through the array."
+  },
+  {
+    "question": "Given the code fragment:\n\n1. class App {\n2.\n3. }\n\nWhich two code fragments are valid at line 2?",
+    "answers": {
+      "a": "for (int count = 0; count < 5; count++) { System.out.print(count); }",
+      "b": "package p1;",
+      "c": "import java.util.*;\npublic void display() {\n    List<Integer> nums = new ArrayList<>();\n}",
+      "d": "{ } int num;",
+      "e": "private String name = \"John\";\npublic void display() { System.out.print(name); }"
+    },
+    "correctAnswer": ["d", "e"],
+    "explanation": "Only class members and initialization blocks are valid at line 2."
+  },
+  {
+    "question": "Given:\n\nclass Messenger {\n    String msg;\n    Messenger(String msg) {this.msg = msg;}\n    public void writeMsg() {\n        System.out.println(msg);\n    }\n    public void readMsg() {\n        // line n1\n    }\n}\n\nAnd the code fragment:\n\nMessenger m = new Messenger(\"All the best\");\nm.readMsg();\n\nWhich code fragment can be inserted at line n1 to enable the code to print 'All the best'?",
+    "answers": {
+      "a": "void writeMsg();",
+      "b": "Messenger.writeMsg();",
+      "c": "writeMsg();",
+      "d": "m.writeMsg();"
+    },
+    "correctAnswer": ["c"],
+    "explanation": "The writeMsg() method call should not include a return type and does not require an object reference here."
+  },
+  {
+    "question": "Which statement is true about a Java method?",
+    "answers": {
+      "a": "It must be declared with an access modifier.",
+      "b": "It cannot be defined within another method.",
+      "c": "It must accept a parameter and return a value.",
+      "d": "It cannot be defined as static final."
     },
     "correctAnswer": ["b"],
-    "explanation": "The expression x + y + \"\" + x + y evaluates to 15 as a string, then concatenates x and y, resulting in '10510'."
+    "explanation": "Java does not allow method definitions within other methods."
+  },
+  {
+    "question": "Identify two Java reserved words.",
+    "answers": {
+      "a": "array",
+      "b": "true",
+      "c": "this",
+      "d": "exception",
+      "e": "string"
+    },
+    "correctAnswer": ["b", "c"],
+    "explanation": "Java reserved words include 'true' and 'this'."
+  },
+  {
+    "question": "Given the code fragment:\n\nboolean checkOut = true;\nint days = 0;\nwhile (checkOut) {\n    days++;\n    if (days > 3) {\n        checkOut = false;\n    }\n}\nSystem.out.println(days);\n\nWhat is the result?",
+    "answers": {
+      "a": "2",
+      "b": "4",
+      "c": "The program executes an infinite number of times.",
+      "d": "3"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The loop stops after four increments, resulting in 'days' equal to 4."
+  },
+  {
+    "question": "Which statement is true about primitive variables?",
+    "answers": {
+      "a": "They can be compared with the == operator.",
+      "b": "They can be compared with the equals method only.",
+      "c": "They cannot be compared.",
+      "d": "They can be compared with the compareTo method only."
+    },
+    "correctAnswer": ["a"],
+    "explanation": "Primitive variables are compared using the '==' operator."
+  },
+  {
+    "question": "What will be the output of the following Java code snippet?\n\nint a = random.nextInt(15) + 1;",
+    "answers": {
+      "a": "Random number between 1 to 15, including 1 and 15",
+      "b": "Random number between 1 to 15, excluding 15",
+      "c": "Random number between 1 to 15, excluding 1",
+      "d": "Random number between 1 to 15, excluding 1 and 15"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The code generates a random integer between 1 and 15 inclusive."
+  },
+  {
+    "question": "Which component is responsible for converting bytecode into machine specific code?",
+    "answers": {
+      "a": "JVM",
+      "b": "JDK",
+      "c": "JIT",
+      "d": "JRE"
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The JVM (Java Virtual Machine) translates bytecode into platform-specific machine code."
+  },
+  {
+    "question": "What is the use of an interpreter?",
+    "answers": {
+      "a": "They convert bytecode to machine language code.",
+      "b": "They read high level code and execute them.",
+      "c": "They are intermediates between JIT and JVM.",
+      "d": "It is a synonym for JIT."
+    },
+    "correctAnswer": ["a", "b"],
+    "explanation": "The interpreter converts bytecode to machine language, enabling execution across platforms."
+  },
+  {
+    "question": "Which three statements are true about exception handling?",
+    "answers": {
+      "a": "Only unchecked exceptions can be rethrown.",
+      "b": "All subclasses of the RuntimeException class are not recoverable.",
+      "c": "The parameter in the catch block is of Throwable type.",
+      "d": "All subclasses of the RuntimeException class must be caught or declared to be thrown.",
+      "e": "All subclasses of the RuntimeException class are unchecked exceptions.",
+      "f": "All subclasses of the Error class are not recoverable."
+    },
+    "correctAnswer": ["c", "e", "f"],
+    "explanation": "RuntimeException subclasses are unchecked, and Error subclasses are generally not recoverable."
+  },
+  {
+    "question": "Given:\n\npublic class App {\n    public static void main(String[] args) {\n        String str1 = \"Java\";\n        String str2 = new String(\"java\");\n        // line n1\n        System.out.println(\"Equal\");\n    } else {\n        System.out.println(\"Not Equal\");\n    }\n}\n\nWhich code fragment, when inserted at line n1, enables the App class to print 'Equal'?",
+    "answers": {
+      "a": "String str3 = str2; if (str1 == str3) {",
+      "b": "if (str1.equalsIgnoreCase(str2)) {",
+      "c": "String str3 = str2; if (str1.equals(str3)) {",
+      "d": "if (str1.toLowerCase() == str2.toLowerCase()) {"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "Using equalsIgnoreCase() compares strings without case sensitivity, resulting in 'Equal'."
   },
 
   {
-    "question": "What is the purpose of the 'transient' keyword?",
+    "question": "Given:\n\npublic class Test {\n    static int a;\n    int b;\n    public void incr(){\n        int c = a++;\n        b++;\n        c++;\n        System.out.println(a + \" \" + b + \" \" + c);\n    }\n    public static void main(String args[]){\n        Test test = new Test();\n        test.incr();\n        a++;\n        test = new Test();\n        test.incr();\n    }\n}\n\nWhat will be the output?",
     "answers": {
-      "a": "To make a class not serializable",
-      "b": "To make a variable not part of the serialization process",
-      "c": "To allow a variable to be serialized multiple times",
-      "d": "To make a variable read-only"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The 'transient' keyword in Java is used to prevent a variable from being serialized when the object is stored in a serialized form."
-  },
-  {
-    "question": "Given the following code, what will be the output?\n\nSystem.out.println(\"Result: \" + (4 + 5 * 3));",
-    "answers": {
-      "a": "Result: 27",
-      "b": "Result: 19",
-      "c": "Result: 15",
-      "d": "Result: 12"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "In Java, multiplication has higher precedence than addition, so 5 * 3 is evaluated first, resulting in 15. Then, 4 + 15 gives 19."
-  },
-  {
-    "question": "Which statement about abstract methods is correct?",
-    "answers": {
-      "a": "Abstract methods can have a body.",
-      "b": "Abstract methods must be implemented in the same class.",
-      "c": "Abstract methods can be static.",
-      "d": "Abstract methods must be implemented in a subclass."
-    },
-    "correctAnswer": ["d"],
-    "explanation": "Abstract methods in Java have no body and must be implemented in a subclass."
-  },
-  {
-    "question": "What is the output of the following code?\n\nString str = \"ABCDE\";\nSystem.out.println(str.indexOf(\"C\"));",
-    "answers": {
-      "a": "1",
-      "b": "2",
-      "c": "3",
-      "d": "4"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The indexOf method returns the position of the first occurrence of the specified character. 'C' is at index 2 in \"ABCDE\"."
-  },
-  {
-    "question": "Which of the following is a feature of a 'final' method in Java?",
-    "answers": {
-      "a": "It can be overridden by subclasses.",
-      "b": "It cannot be overridden by subclasses.",
-      "c": "It must return an integer.",
-      "d": "It must be called within the same package."
-    },
-    "correctAnswer": ["b"],
-    "explanation": "A 'final' method in Java cannot be overridden by subclasses, ensuring that its implementation remains unchanged."
-  },
-  {
-    "question": "Which method in the Math class is used to round a floating-point number to the nearest integer?",
-    "answers": {
-      "a": "ceil()",
-      "b": "floor()",
-      "c": "round()",
-      "d": "abs()"
+      "a": "Compilation failure.",
+      "b": "1 1 1\n2 1 2",
+      "c": "1 1 1\n3 1 3",
+      "d": "1 2 1\n2 3 3",
+      "e": "1 2 1\n3 3 3"
     },
     "correctAnswer": ["c"],
-    "explanation": "The Math.round() method rounds a floating-point number to the nearest integer."
+    "explanation": "The static variable 'a' is incremented twice, resulting in 3. The instance variable 'b' is incremented twice, resulting in 3. The local variable 'c' is incremented twice, resulting in 3."
   },
   {
-    "question": "What will be the result of the following code?\n\nint[] arr = {1, 2, 3, 4};\nSystem.out.println(arr[1] + arr[3]);",
+    "question": "What can you do to make the following code print a number between 0 and 10?\n\nint x = 10;\n//insert code here\nSystem.out.println(d);",
+    "answers": {
+      "a": "Random r = new Random(x);\nint d = r.nextInt();",
+      "b": "Random r = new Random();\nint d = r.nextInt(x);",
+      "c": "Random r = new Random(x);\nint d = r.nextInt(x);",
+      "d": "Random r = new Random(x);\nint d = (int) r.next()*10;",
+      "e": "Random r = new Random();\nr.setSeed(x);\nint d = (int) r.next()*10;",
+      "f": "Random r = new Random(x);\nr.setSeed(x);\nint d = r.nextInt(x);"
+    },
+    "correctAnswer": ["b", "c", "f"],
+    "explanation": "Using 'r.nextInt(x)' generates a random number between 0 (inclusive) and x (exclusive). Setting the seed does not affect the range of numbers generated."
+  },
+  {
+    "question": "What will be printed when the following code snippet is executed?\n\nString str = \"123456789\";\nString s = str.substring(2, 5);\nSystem.out.println(s);",
+    "answers": {
+      "a": "23456",
+      "b": "345678",
+      "c": "45678",
+      "d": "2345",
+      "e": "3456",
+      "f": "345"
+    },
+    "correctAnswer": ["f"],
+    "explanation": "The substring method extracts characters from index 2 to 4 (inclusive), resulting in '345'."
+  },
+  {
+    "question": "Which of these expressions will return true? (Choose 4 answers)",
+    "answers": {
+      "a": "\"hello world\".equals(\"hello world\")",
+      "b": "\"HELLO world\".equalsIgnoreCase(\"hello world\")",
+      "c": "\"hello\".concat(\" world\").trim().equals(\"hello world\")",
+      "d": "\"hello world\".compareTo(\"Hello world\") < 0",
+      "e": "\"Hello world\".toLowerCase().equals(\"hello world\")"
+    },
+    "correctAnswer": ["a", "b", "c", "e"],
+    "explanation": "The first, second, third, and fifth expressions evaluate to true. The fourth expression is false because 'compareTo' is case-sensitive."
+  },
+  {
+    "question": "Identify correct statements. (Choose 2 answers)",
+    "answers": {
+      "a": "1 + Math.random()*9 will return a random number between 1 and 10.",
+      "b": "Math.random()*10 will return a random number between 1 and 10.",
+      "c": "Math.round(Math.random()*9) will return a random number between 1 and 10.",
+      "d": "1 + Math.round(Math.random()*9) will return a random number between 1 and 10.",
+      "e": "Math.round(Math.random()*10) will return a random number between 1 and 10."
+    },
+    "correctAnswer": ["a", "c"],
+    "explanation": "The expression '1 + Math.random()*9' generates a number between 1 (inclusive) and 10 (exclusive). '1 + Math.round(Math.random()*9)' generates an integer between 1 and 10."
+  },
+  {
+    "question": "What can be inserted at //1 and //2 in the code below so that it will print a number between 0.0 and 1.0?\n\n//1\ndouble d = //2\nSystem.out.println(d);",
+    "answers": {
+      "a": "java.util.Random r = new java.util.Random(); and r.random();",
+      "b": "Random r = new Random(); and r.random();",
+      "c": "java.util.Random r = new java.util.Random(); and r.nextDouble();",
+      "d": "Random r = new Random(); and r.next();",
+      "e": "java.util.Random r = new java.util.Random(100); and r.nextDouble();"
+    },
+    "correctAnswer": ["c", "e"],
+    "explanation": "The Random class nextDouble() method returns a double value between 0.0 and 1.0. The correct instantiation is 'java.util.Random r = new java.util.Random();'"
+  },
+  {
+    "question": "Identify valid for constructs: (Choose 2 answers)",
+    "answers": {
+      "a": "for(;Math.random()<0.5;) { System.out.println(\"true\"); }",
+      "b": "for(;;Math.random()<0.5) { System.out.println(\"true\"); }",
+      "c": "for(;;Math.random()) { System.out.println(\"true\"); }",
+      "d": "for(;;) { if(Math.random()<.05) break; }"
+    },
+    "correctAnswer": ["a", "d"],
+    "explanation": "The first and last constructs are valid. The second and third constructs have invalid conditions in the increment section."
+  },
+  {
+    "question": "Consider the following method, which is called with an argument of 7:\n\nWhat will it print?",
+    "answers": {
+      "a": "It will print 1 and 2",
+      "b": "It will print 1 to N where N is a random number.",
+      "c": "It will not compile.",
+      "d": "It will throw an exception at runtime."
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The loop prints numbers from j to 1, where j is a random number determined by the break statement."
+  },
+  {
+    "question": "Which of the following operators can be used in conjunction with a String object? (Choose 3 answers)",
+    "answers": {
+      "a": "+",
+      "b": "++",
+      "c": "+=",
+      "d": ".",
+      "e": "*"
+    },
+    "correctAnswer": ["a", "c", "d"],
+    "explanation": "The '+' and '+=' operators can be used for string concatenation, and the '.' operator is used to call methods on a String object."
+  },
+  {
+    "question": "What will the following code snippet print?\n\nint count = 0, sum = 0;\ndo {\n    if (count % 3 == 0) continue;\n    sum += count;\n} while (count++ < 11);\nSystem.out.println(sum);",
+    "answers": {
+      "a": "49",
+      "b": "48",
+      "c": "37",
+      "d": "36",
+      "e": "38"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The loop skips numbers divisible by 3, so the sum is 48."
+  },
+  {
+    "question": "What will the following program print?\n\nclass LoopTest {\n    public static void main(String args[]) {\n        int counter = 0;\n        outer: for (int i = 0; i < 3; i++)\n        middle: for (int j = 0; j < 3; j++)\n        inner: for (int k = 0; k < 3; k++) {\n            if (k - j > 0) break middle;\n            counter++;\n        }\n        System.out.println(counter);\n    }\n}",
+    "answers": {
+      "a": "2",
+      "b": "3",
+      "c": "6",
+      "d": "7",
+      "e": "9"
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The loop increments the counter 3 times before breaking out of the middle loop when k-j>0."
+  },
+  {
+    "question": "What will the following code print?\n\nint i = 0;\nint j = 1;\nif ((i++==0) && (j++==2)) {\n    i = 12;\n}\nSystem.out.println(i + \" \" + j);",
+    "answers": {
+      "a": "1 2",
+      "b": "2 3",
+      "c": "12 2",
+      "d": "12 1",
+      "e": "It will not compile."
+    },
+    "correctAnswer": ["a"],
+    "explanation": "The first condition is true, so i is incremented to 1. The second condition is false, so j is incremented to 2, and i is not set to 12."
+  },
+  {
+    "question": "What will be the result of attempting to compile and run the following class?\n\npublic class TestClass {\n    public static void main(String args[]) {\n        int i = 1;\n        int[] iArr = { 1 };\n        incr(i);\n        incr(iArr);\n        System.out.println(\"i = \" + i + \"  iArr[0] = \" + iArr[0]);\n    }\n    public static void incr(int n) { n++; }\n    public static void incr(int[] n) { n[0]++; }\n}",
+    "answers": {
+      "a": "The code will print i = 1 iArr[0] = 1",
+      "b": "The code will print i = 1 iArr[0] = 2",
+      "c": "The code will print i = 2 iArr[0] = 1",
+      "d": "The code will print i = 2 iArr[0] = 2",
+      "e": "The code will not compile."
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The integer 'i' is passed by value, so it remains 1. The array 'iArr' is passed by reference, so its first element is incremented to 2."
+  },
+  {
+    "question": "What will the following code print?\n\npublic class BreakTest {\n    public static void main(String[] args) {\n        int i = 0, j = 5;\n        lab1: for (;; i++) {\n            for (;; --j) if (i > j) break lab1;\n        }\n        System.out.println(\"i = \" + i + \" , j = \" + j);\n    }\n}",
+    "answers": {
+      "a": "i = 1, j = -1",
+      "b": "i = 1, j = 4",
+      "c": "i = 0, j = 4",
+      "d": "i = 0, j = -1",
+      "e": "It will not compile."
+    },
+    "correctAnswer": ["d"],
+    "explanation": "The outer loop increments 'i' and the inner loop decrements 'j' until 'i > j', resulting in 'i = 0, j = -1'."
+  },
+  {
+    "question": "What is the effect of compiling and running this class?\n\npublic class TestClass {\n    public static void main(String args[]) {\n        int sum = 0;\n        for (int i = 0, j = 10; sum > 20; ++i, --j) {\n            sum = sum + i + j;\n        }\n        System.out.println(\"Sum = \" + sum);\n    }\n}",
+    "answers": {
+      "a": "Compile time error at line 1.",
+      "b": "It will print Sum = 0",
+      "c": "It will print Sum = 20",
+      "d": "Runtime error.",
+      "e": "None of the above."
+    },
+    "correctAnswer": ["b"],
+    "explanation": "The loop condition 'sum > 20' is false initially, so the loop body is never executed, and 'Sum = 0' is printed."
+  },
+  {
+    "question": "Given the following class, which statements can be inserted at line 1 without causing the code to fail compilation? (Choose 4 answers)\n\npublic class TestClass {\n    int a;\n    int b = 0;\n    static int c;\n    public void m() {\n        int d;\n        int e = 0;\n        // Line 1\n    }\n}",
+    "answers": {
+      "a": "a++;",
+      "b": "b++;",
+      "c": "c++;",
+      "d": "d++;",
+      "e": "e++;"
+    },
+    "correctAnswer": ["a", "b", "c", "e"],
+    "explanation": "The variables 'a', 'b', 'c', and 'e' are initialized and can be incremented. The variable 'd' is not initialized, so it cannot be incremented."
+  },
+  {
+    "question": "Which of the lines will cause a compile time error in the following program?\n\npublic class MyClass {\n    public static void main(String args[]) {\n        char c;\n        int i;\n        c = 'a'; //1\n        i = c; //2\n        i++; //3\n        c = i; //4\n        c++; //5\n    }\n}",
+    "answers": {
+      "a": "The line 1",
+      "b": "The line 2",
+      "c": "The line 3",
+      "d": "The line 4",
+      "e": "The line 5"
+    },
+    "correctAnswer": ["d"],
+    "explanation": "Line 4 causes a compile-time error because an int cannot be directly assigned to a char without casting."
+  },
+  {
+    "question": "What will be the output if you run the following program?\n\npublic class TestClass {\n    public static void main(String args[]) {\n        int i;\n        int j;\n        for (i = 0, j = 0; j < 1; ++j, i++) {\n            System.out.println(i + \" \" + j);\n        }\n        System.out.println(i + \" \" + j);\n    }\n}",
+    "answers": {
+      "a": "0 0 will be printed twice.",
+      "b": "1 1 will be printed once.",
+      "c": "0 1 will be printed followed by 1 2.",
+      "d": "0 0 will be printed followed by 1 1.",
+      "e": "It will print 0 0 and then 0 1."
+    },
+    "correctAnswer": ["d"],
+    "explanation": "The loop runs once, printing '0 0'. After the loop, 'i' is incremented to 1 and 'j' to 1, so '1 1' is printed."
+  },
+  {
+    "question": "What will it print when the following code compiled and run?\n\npublic class TestClass {\n    public static int switchTest(int k) {\n        int j = 1;\n        switch (k) {\n        case 1: j++;\n        case 2: j++;\n        case 3: j++;\n        case 4: j++;\n        case 5: j++;\n        default: j++;\n        }\n        return j + k;\n    }\n    public static void main(String[] args) {\n        System.out.println(switchTest(4));\n    }\n}",
     "answers": {
       "a": "5",
       "b": "6",
       "c": "7",
-      "d": "10"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "arr[1] is 2 and arr[3] is 4, so their sum is 6."
-  },
-  {
-    "question": "Which operator is used for object reference comparison in Java?",
-    "answers": {
-      "a": "==",
-      "b": "equals()",
-      "c": "compareTo()",
-      "d": "!="
-    },
-    "correctAnswer": ["a"],
-    "explanation": "The '==' operator compares object references to check if they point to the same memory location."
-  },
-  {
-    "question": "What is the output of the following code?\n\nint[] arr = {10, 20, 30};\nSystem.out.println(arr[0] + arr[2]);",
-    "answers": {
-      "a": "10",
-      "b": "20",
-      "c": "30",
-      "d": "40"
+      "d": "8",
+      "e": "9"
     },
     "correctAnswer": ["d"],
-    "explanation": "arr[0] is 10 and arr[2] is 30, so their sum is 40."
+    "explanation": "The switch statement does not have break statements, so it falls through all cases starting from case 4, incrementing j five times. The result is 8."
   },
   {
-    "question": "Which of these keywords is used to define an interface in Java?",
+    "question": "What will be the result of attempting to compile and run the following code?\n\npublic class PromotionTest {\n    public static void main(String args[]) {\n        int i = 5;\n        float f = 5.5f;\n        double d = 3.8;\n        char c = 'a';\n        if (i == f) c++;\n        if (((int)(f + d)) == ((int) f + (int) d)) c += 2;\n        System.out.println(c);\n    }\n}",
     "answers": {
-      "a": "class",
-      "b": "interface",
-      "c": "implements",
-      "d": "package"
+      "a": "The code will fail to compile.",
+      "b": "It will print d.",
+      "c": "It will print c.",
+      "d": "It will print b",
+      "e": "It will print a."
     },
     "correctAnswer": ["b"],
-    "explanation": "The 'interface' keyword is used to define an interface in Java."
+    "explanation": "The condition 'i == f' is false, so c is not incremented. The second condition is false, so c is not incremented by 2, resulting in 'd'."
   },
   {
-    "question": "What is the result of the following code?\n\nString text = \"Java\";\nSystem.out.println(text.length());",
+    "question": "What will the following code print?\n\nvoid crazyLoop() {\n    int c = 0;\n    JACK: while (c < 8) {\n        JILL: System.out.println(c);\n        if (c > 3) break JACK;\n        else c++;\n    }\n}",
     "answers": {
-      "a": "3",
-      "b": "4",
-      "c": "5",
-      "d": "Error"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The length of the string 'Java' is 4."
-  },
-  {
-    "question": "Which keyword is used in Java to inherit a class?",
-    "answers": {
-      "a": "super",
-      "b": "inherit",
-      "c": "extends",
-      "d": "this"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "The 'extends' keyword is used in Java to inherit a class."
-  },
-  {
-    "question": "What is the output of the following code?\n\nint a = 5;\na *= 2 + 3;\nSystem.out.println(a);",
-    "answers": {
-      "a": "10",
-      "b": "15",
-      "c": "25",
-      "d": "20"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "The expression a *= 2 + 3 first evaluates 2 + 3 to 5, then multiplies a by 5, resulting in 25."
-  },
-  {
-    "question": "Which of the following is not a primitive data type in Java?",
-    "answers": {
-      "a": "int",
-      "b": "float",
-      "c": "boolean",
-      "d": "String"
-    },
-    "correctAnswer": ["d"],
-    "explanation": "String is not a primitive data type; it is an object in Java."
-  },
-  {
-    "question": "What is the result of the following code?\n\nString s = \"Java Programming\";\nSystem.out.println(s.toUpperCase());",
-    "answers": {
-      "a": "java programming",
-      "b": "JAVA PROGRAMMING",
-      "c": "Java Programming",
-      "d": "Error"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The toUpperCase() method converts all characters in the string to uppercase."
-  },
-  {
-    "question": "Which of the following is the superclass of every class in Java?",
-    "answers": {
-      "a": "Object",
-      "b": "Class",
-      "c": "System",
-      "d": "String"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "Object is the superclass of all classes in Java."
-  },
-  {
-    "question": "What does the 'break' statement do in a loop?",
-    "answers": {
-      "a": "Skips the current iteration",
-      "b": "Ends the program",
-      "c": "Terminates the loop",
-      "d": "Repeats the loop"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "The 'break' statement exits the current loop immediately."
-  },
-  {
-    "question": "Given the code fragment: public static void main(String[] args) { String[] arr = {\"A\", \"B\", \"C\", \"D\"}; for(int i = 0; i < arr.length; i++){ System.out.print(arr[i] + \" \"); if(arr[i].equals(\"C\")) { continue; } System.out.println(\"Work done\"); break;} } What is the result?",
-    "answers": {
-      "A": "A B C Work done",
-      "B": "A B C D Work done",
-      "C": "A Work done",
-      "D": "Compilation fails"
-    },
-    "correctAnswer": ["C"],
-    "explanation": "The loop prints 'A' and continues until it encounters 'C'. After 'C', it skips the second print statement and goes to the 'break', so only 'A Work done' is printed."
-  },
-  {
-    "question": "Given the code fragment: public static void main(String[] args) { int ii = 0; int jj = 7; for(ii = 0; ii < jj - 1; ii = ii + 2) { System.out.print(ii + \" \"); } } What is the result?",
-    "answers": {
-      "A": "2 4",
-      "B": "0 2 4 6",
-      "C": "0 2 4",
-      "D": "Compilation fails"
-    },
-    "correctAnswer": ["C"],
-    "explanation": "The loop increments 'ii' by 2 each time and stops when 'ii < jj - 1' is no longer true. It outputs '0 2 4'."
-  },
-  {
-    "question": "Given the code fragment: public class Test { static int count = 0; int i = 0; public void changeCount() { while(i < 5) { i++; count++; } } public static void main(String[] args) { Test check1 = new Test(); Test check2 = new Test(); check1.changeCount(); check2.changeCount(); System.out.print(check1.count + \" : \" + check2.count); } } What is the result?",
-    "answers": {
-      "A": "10 : 10",
-      "B": "5 : 5",
-      "C": "5 : 10",
-      "D": "Compilation fails"
-    },
-    "correctAnswer": ["A"],
-    "explanation": "The static variable 'count' is shared among all instances of the class. Both 'check1' and 'check2' increment 'count', resulting in '10 : 10'."
-  },
-  {
-    "question": "Given the code fragment: if(aVar ++ < 10) { System.out.println(aVar + \" Hello World!\"); } else { System.out.println(aVar + \" Hello Universe!\"); } What is the result if the integer aVar is 9?",
-    "answers": {
-      "A": "10 Hello World!",
-      "B": "10 Hello Universe!",
-      "C": "9 Hello World!",
-      "D": "Compilation fails."
-    },
-    "correctAnswer": ["A"],
-    "explanation": "The expression 'aVar++ < 10' checks 'aVar' before incrementing. Since 'aVar' is initially 9, the condition is true, so it prints '10 Hello World!'."
-  },
-  {
-    "question": "Given the code fragment: public static void main(String[] args) { Short s1 = 200; Integer s2 = 400; Long s3 =(long) s1 + s2; //line n1 String s4 =(String)(s3 * s2); //line n2 System.out.println(\"Sum is \" + s4); } What is the result?",
-    "answers": {
-      "A": "Sum is 600",
-      "B": "Compilation fails at line n1.",
-      "C": "Compilation fails at line n2.",
-      "D": "A ClassCastException is thrown at line n1.",
-      "E": "A ClassCastException is thrown at line n2."
-    },
-    "correctAnswer": ["C"],
-    "explanation": "At line n2, there is a type mismatch. 's3 * s2' produces a Long, which cannot be directly cast to String, causing compilation to fail."
-  },
-
-  {
-    "question": "What is the main purpose of the 'this' keyword in Java?",
-    "answers": {
-      "a": "To refer to the current class instance",
-      "b": "To call a superclass method",
-      "c": "To access static variables",
-      "d": "To initialize a class"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "The 'this' keyword refers to the current object and is used to avoid ambiguity between instance variables and parameters."
-  },
-  {
-    "question": "Which collection class in Java provides a dynamic array?",
-    "answers": {
-      "a": "ArrayList",
-      "b": "LinkedList",
-      "c": "HashMap",
-      "d": "TreeSet"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "ArrayList provides a resizable array implementation in Java's collection framework."
-  },
-  {
-    "question": "What is the significance of the 'package' keyword in Java?",
-    "answers": {
-      "a": "It is used to define a class",
-      "b": "It is used to group related classes",
-      "c": "It is used to specify the version",
-      "d": "It is used for memory management"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "In Java, the 'package' keyword is used to group related classes, making code more modular and manageable."
-  },
-  {
-    "question": "Which method is used to start a thread in Java?",
-    "answers": {
-      "a": "begin()",
-      "b": "run()",
-      "c": "start()",
-      "d": "execute()"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "The 'start()' method is used to begin the execution of a new thread, calling the 'run()' method internally."
-  },
-  {
-    "question": "What will be the output of the following code?\n\nint x = 7;\nint y = x >> 2;\nSystem.out.println(y);",
-    "answers": {
-      "a": "1",
-      "b": "3",
-      "c": "2",
-      "d": "0"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The right shift operator '>>' shifts bits to the right, so x >> 2 shifts 7 by 2 bits, resulting in 3."
-  },
-  {
-    "question": "In Java, which exception is thrown when an array is accessed with a negative index?",
-    "answers": {
-      "a": "ArrayIndexOutOfBoundsException",
-      "b": "IllegalArgumentException",
-      "c": "IndexOutOfBoundsException",
-      "d": "NullPointerException"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "An ArrayIndexOutOfBoundsException is thrown if you try to access an array with a negative index."
-  },
-  {
-    "question": "Which of the following statements is true about an abstract method?",
-    "answers": {
-      "a": "It has a body",
-      "b": "It can be private",
-      "c": "It has no implementation",
-      "d": "It must be static"
-    },
-    "correctAnswer": ["c"],
-    "explanation": "An abstract method in Java has no implementation and is meant to be overridden by subclasses."
-  },
-  {
-    "question": "Given the following main method: public static void main(String [] args) { int num = 5; do { System.out.print(num +\" \"); } while(num == 0); } What is the result?",
-    "answers": {
-      "a": "5 4 3 2 1 0",
-      "b": "5 4 3 2 1",
-      "c": "4 2 1",
-      "d": "5",
-      "e": "Nothing is printed"
-    },
-    "correctAnswer": ["d"],
-    "explanation": "The 'do-while' loop runs at least once, printing '5', because 'num == 0' is checked after the first iteration."
-  },
-  {
-    "question": "Given the code fragment: int x = 100; int a = x++ ; int b = ++x; int c = x++ ; int d =(a < b) ?(a < c) ? a:(b <c ) ? b: c; System.out.println(d) ; What is the result?",
-    "answers": {
-      "a": "100",
-      "b": "101",
-      "c": "102",
-      "d": "103",
-      "e": "Compilation fails"
+      "a": "It will not compile.",
+      "b": "It will throw an exception at runtime.",
+      "c": "It will print numbers from 0 to 8",
+      "d": "It will print numbers from 0 to 3",
+      "e": "It will print numbers from 0 to 4"
     },
     "correctAnswer": ["e"],
-    "explanation": "The code has a syntax error with nested ternary operators, causing compilation to fail."
+    "explanation": "The loop prints numbers from 0 to 4. When c becomes 4, the condition 'c > 3' is true, and the loop breaks."
   },
   {
-    "question": "Given: public class Test { public static void main(String[] args) { String[][] chs = new String[2][]; chs[0] = new String[2]; chs[1] = new String[5]; int i = 97; for(int a = 0; a < chs.length; a++) { for(int b = 0; b < chs.length; b++) { chs [a] [b] = \" \" + i; i++; } } for(String[] ca : chs) { for(String c : ca) { System.out.print(c + \" \"); } System.out.println(); } } } What is the result?",
+    "question": "Which of the following are char literals? (Choose 3 answers)",
     "answers": {
-      "a": "97 98 99 100 null null null",
-      "b": "91 98 99 100 101 102 103",
-      "c": "Compilation fails.",
-      "d": "A NullPointerException is thrown at runtime.",
-      "e": "An ArrayIndexOutOfBoundsException is thrown at runtime."
+      "a": "'a'",
+      "b": "'\\n'",
+      "c": "'\\uDEAF'",
+      "d": "'/a/'",
+      "e": "'\"a\"'"
     },
-    "correctAnswer": ["a"],
-    "explanation": "The nested arrays are partially filled, so 'null' values appear after filling the valid indices with '97', '98', '99', and '100'."
+    "correctAnswer": ["a", "b", "c"],
+    "explanation": "The first three options are valid char literals. '/a/' is not a valid char literal, and '\"a\"' is a String literal."
   },
   {
-    "question": "Given: public class Student { public String name = \"\"; public int age = 0; public String major = \"Undeclared\"; public boolean fulltime = true; public void display() { System.out.println(\"Name: \" + name + \" Major: \" + major); } public boolean isFullTime() { return fulltime; } } Which line of code initializes a student instance?",
+    "question": "What will the following code print when compiled and run?\n\nimport java.util.*;\npublic class TestClass {\n    public static void main(String[] args) throws Exception {\n        ArrayList<String> al = new ArrayList<>();\n        al.add(\"111\");\n        al.add(\"222\");\n        System.out.println(al.get(al.size()));\n    }\n}",
     "answers": {
-      "a": "Student student1;",
-      "b": "Student student1 = Student.new();",
-      "c": "Student student1 = new Student();",
-      "d": "Student student1 = Student();"
+      "a": "It will not compile.",
+      "b": "It will throw a NullPointerException at run time.",
+      "c": "It will throw an IndexOutOfBoundsException at run time.",
+      "d": "\"222\"",
+      "e": "null"
     },
     "correctAnswer": ["c"],
-    "explanation": "'Student student1 = new Student();' correctly creates an instance of the Student class."
+    "explanation": "The method get(al.size()) attempts to access an index equal to the size of the list, which is out of bounds, resulting in an IndexOutOfBoundsException."
   },
   {
-    "question": "What should keyword1 and keyword2 be respectively, in order to produce output 2345? int [] array = {1,2,3,4,5}; for(int i: array) { if( i < 2) { keyword1 ; } System.out.print(i); if( i == 3) { keyword2 ; } }",
+    "question": "What is the result of executing the following code when the value of i is 5?\n\nswitch (i) {\n    default:\n    case 1:\n        System.out.println(1);\n    case 0:\n        System.out.println(0);\n    case 2:\n        System.out.println(2);\n        break;\n    case 3:\n        System.out.println(3);\n}",
     "answers": {
-      "a": "continue, break",
-      "b": "break, break",
-      "c": "break, continue",
-      "d": "continue, continue"
-    },
-    "correctAnswer": ["d"],
-    "explanation": "Using 'continue' for both skips the values that don't match the conditions, achieving the output '2345'."
-  },
-  {
-    "question": "What is the result? int i, j=0; i =(3* 2 +4 +5 ) ; j =(3 *((2+4) + 5)); System.out.println(\"i:\"+ i + \"\\nj:\"+j);",
-    "answers": {
-      "a": "i: 16 j: 33",
-      "b": "i: 15 j:33",
-      "c": "i:33 j:23",
-      "d": "i:15 j:23"
-    },
-    "correctAnswer": ["b"],
-    "explanation": "The expression calculates 'i' as '15' and 'j' as '33' based on operator precedence."
-  },
-  {
-    "question": "Your friend keeps telling you 'Don't redeem the card!' in a message. How can you check in Java if the message really contains the word 'redeem'?",
-    "answers": {
-      "a": "message.contains(\"redeem\");",
-      "b": "message.indexOf(\"redeem\") >= 0;",
-      "c": "message.equals(\"redeem\");",
-      "d": "message.charAt(0) == 'r';"
-    },
-    "correctAnswer": ["a", "b"],
-    "explanation": "Both 'contains' and 'indexOf' can be used to check if 'redeem' is part of the message."
-  },
-  {
-    "question": "You want to check if the message 'Matthias soll zurück zu unserer Klasse' ends with 'Klasse'. Which line of Java code will confirm this?",
-    "answers": {
-      "a": "message.endsWith(\"Klasse\");",
-      "b": "message.equals(\"Klasse\");",
-      "c": "message.contains(\"Klasse\");",
-      "d": "message.charAt(message.length() - 1) == 'e';"
+      "a": "It will print 1 0 2",
+      "b": "It will print 1 0 2 3",
+      "c": "It will print 1 0",
+      "d": "It will print 1",
+      "e": "Nothing will be printed."
     },
     "correctAnswer": ["a"],
-    "explanation": "The 'endsWith' method checks if the string ends with 'Klasse'."
-  },
-  {
-    "question": "Matthias hat seine Rückkehr zur Klasse auf einem Boolean-Flag gespeichert. Welcher Wert sollte das Flag haben, wenn er zurückkehrt?",
-    "answers": {
-      "a": "true",
-      "b": "false",
-      "c": "null",
-      "d": "1"
-    },
-    "correctAnswer": ["a"],
-    "explanation": "a 'true' value would indicate that Matthias has returned to the class."
+    "explanation": "The default case is executed, printing '1', then '0', and '2'. The break statement stops further execution."
   }
 ]

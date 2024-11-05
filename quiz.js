@@ -19,25 +19,26 @@ let selectedAnswers = new Set();
 let questionAnsweredIncorrectly = false;
 let numberOfQuestions = 50;
 
-// Funktion zum Laden der Fragen aus der JSON-Datei und Zufallsauswahl von 50 Fragen
 async function loadQuestions() {
   try {
     const response = await fetch("questions100.json");
+    if (!response.ok)
+      throw new Error("JSON-Datei konnte nicht geladen werden.");
     allQuestions = await response.json();
     startQuiz();
   } catch (error) {
     console.error("Fehler beim Laden der Fragen:", error);
+    questionContainer.innerText =
+      "Fragen konnten nicht geladen werden. Bitte versuche es später erneut.";
   }
 }
 
-// Funktion zum zufälligen Auswählen von Fragen
 function selectRandomQuestions(allQuestions, numQuestions) {
-  const shuffled = allQuestions.sort(() => 0.5 - Math.random()); // Zufällig mischen
-  return shuffled.slice(0, numQuestions); // Die ersten numQuestions auswählen
+  const shuffled = allQuestions.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, numQuestions);
 }
 
 function startQuiz() {
-  // Alle Variablen zurücksetzen
   score = 0;
   correctCount = 0;
   currentQuestionIndex = 0;
@@ -45,23 +46,22 @@ function startQuiz() {
   questionAnsweredIncorrectly = false;
   selectedAnswers.clear();
 
-  // Wählt 50 zufällige Fragen
   questions = selectRandomQuestions(allQuestions, numberOfQuestions);
 
-  // Event-Listener nur einmal hinzufügen
   nextButton.innerText = "Next";
   nextButton.classList.add("next-btn");
   nextButton.disabled = true;
-  nextButton.onclick = nextQuestion; // Event-Listener nur einmal setzen
+  nextButton.onclick = nextQuestion;
 
   showQuestion(questions[currentQuestionIndex]);
   startTimer();
 }
 
 function showQuestion(questionObj) {
-  questionContainer.innerText = questionObj.question;
+  questionContainer.innerText = "";
+  questionContainer.innerHTML = `<pre>${questionObj.question}</pre>`;
   answerContainer.innerHTML = "";
-  explanationContainer.innerHTML = ""; // Erklärung zurücksetzen
+  explanationContainer.innerHTML = "";
   selectedAnswers.clear();
   questionAnsweredIncorrectly = false;
   nextButton.disabled = true;
@@ -80,7 +80,6 @@ function showQuestion(questionObj) {
 }
 
 function handleAnswerSelection(button, selectedAnswer, questionObj) {
-  // Normalisiere die Groß- und Kleinschreibung, um Vergleiche unabhängig davon zu machen
   const normalizedSelectedAnswer = selectedAnswer.toLowerCase();
   const normalizedCorrectAnswers = questionObj.correctAnswer.map((answer) =>
     answer.toLowerCase()
@@ -92,32 +91,25 @@ function handleAnswerSelection(button, selectedAnswer, questionObj) {
     selectedAnswers.add(normalizedSelectedAnswer);
     button.classList.add("correct");
 
-    // Richtig-Audio abspielen
     correctSound.play();
 
-    // Prüfen, ob alle richtigen Antworten ausgewählt wurden
     if (
       selectedAnswers.size === normalizedCorrectAnswers.length &&
       [...selectedAnswers].every((answer) =>
         normalizedCorrectAnswers.includes(answer)
       )
     ) {
-      // Nur Punkt geben, wenn keine falsche Antwort vorher gewählt wurde
       if (!questionAnsweredIncorrectly) {
         score++;
         correctCount++;
       }
-
-      // Erklärung anzeigen und "Next"-Button aktivieren
       displayExplanation(questionObj.explanation);
       nextButton.disabled = false;
     }
   } else {
-    // Markiere die Antwort als falsch und setze die Frage auf "falsch beantwortet"
     button.classList.add("incorrect");
     questionAnsweredIncorrectly = true;
 
-    // Falsch-Audio abspielen
     incorrectSound.play();
   }
 }
@@ -142,7 +134,9 @@ function startTimer() {
     timeLeft--;
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft % 60;
-    timerDisplay.innerText = `${minutes}m ${seconds}s`;
+    timerDisplay.innerText = `${minutes}m ${
+      seconds < 10 ? "0" : ""
+    }${seconds}s`;
     if (timeLeft <= 0) {
       clearInterval(timer);
       endQuiz();
@@ -170,5 +164,4 @@ function endQuiz() {
   });
 }
 
-// Lade die Fragen, sobald das Dokument bereit ist
 document.addEventListener("DOMContentLoaded", loadQuestions);
