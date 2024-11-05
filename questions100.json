@@ -443,6 +443,7 @@
     "correctAnswer": ["b"],
     "explanation": "newFee must be declared as double to match courseFee and avoid data loss."
   },
+
   {
     "question": "Given these class definitions:\n\nclass MyClassA {}\npublic class MyClassB {}\nclass MyClassC extends Object {}\nclass MyClassD {\n    public static void main(String[] args) { }\n}\n\nWhich class or classes compile?",
     "answers": {
@@ -1131,6 +1132,7 @@
     "correctAnswer": ["b"],
     "explanation": "The condition 'i == f' is false, so c is not incremented. The second condition is false, so c is not incremented by 2, resulting in 'd'."
   },
+
   {
     "question": "What will the following code print?\n\nvoid crazyLoop() {\n    int c = 0;\n    JACK: while (c < 8) {\n        JILL: System.out.println(c);\n        if (c > 3) break JACK;\n        else c++;\n    }\n}",
     "answers": {
