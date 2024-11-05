@@ -941,7 +941,7 @@
 
   {
     "question": "Given the following array:\n\nint [] intArr = {8, 16, 32, 64, 128};\n\nWhich two code fragments, independently, print each element in this array?",
-    "options": {
+    "answers": {
       "a": "for(int i : intArr) { System.out.print(intArr[i] + ' '); }",
       "b": "for(int i : intArr) { System.out.print(i + ' '); }",
       "c": "for(int i=0 : intArr) { System.out.print(intArr[i] + ' '); i++; }",
@@ -954,7 +954,7 @@
   },
   {
     "question": "Given the code fragment:\n\nint[] array = {1, 2, 3, 4, 5};\n\nAnd given the requirements:\n1. Process all the elements of the array in the order of entry.\n2. Process all the elements of the array in the reverse order of entry.\n3. Process alternating elements of the array in the order of entry.\n\nWhich two statements are true?",
-    "options": {
+    "answers": {
       "A": "Requirements 1, 2, and 3 can be implemented by using the enhanced for loop.",
       "B": "Requirements 1, 2, and 3 can be implemented by using the standard for loop.",
       "C": "Requirements 2 and 3 CANNOT be implemented by using the standard for loop.",
@@ -966,7 +966,7 @@
   },
   {
     "question": "Given:\n\npublic class TestScope { public static void main(String[] args) { int var1 = 200; System.out.print(doCalc(var1)); System.out.print(' ' + var1); } static int doCalc(int var1) { var1 = var1 * 2; return var1; } }\n\nWhat is the result?",
-    "options": {
+    "answers": {
       "a": "400 200",
       "b": "200 200",
       "c": "400 400",
@@ -977,7 +977,7 @@
   },
   {
     "question": "Given:\n\npublic class MarkList { int num; public static void graceMarks(MarkList obj4) { obj4.num += 10; } public static void main(String[] args) { MarkList obj1 = new MarkList(); MarkList obj2 = obj1; MarkList obj3 = null; obj2.num = 60; graceMarks(obj2); } }\n\nHow many MarkList instances are created in memory at runtime?",
-    "options": {
+    "answers": {
       "a": "1",
       "b": "2",
       "c": "3",
